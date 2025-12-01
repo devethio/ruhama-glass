@@ -30,23 +30,17 @@ export const Navbar = () => {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-card/95 backdrop-blur-md shadow-soft py-3"
-          : "bg-transparent py-5"
+          ? "bg-background/98 backdrop-blur-md border-b border-border/40 py-3"
+          : "bg-background/40 backdrop-blur-sm py-5"
       )}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <span className={cn(
-              "font-display text-2xl font-bold tracking-tight transition-colors",
-              scrolled ? "text-foreground" : "text-primary-foreground"
-            )}>
+            <span className="font-display text-2xl font-bold tracking-tight text-foreground">
               RUHAMA
             </span>
-            <span className={cn(
-              "font-display text-lg font-medium transition-colors",
-              scrolled ? "text-primary" : "text-primary-foreground/80"
-            )}>
+            <span className="font-display text-lg font-medium text-primary">
               Glass
             </span>
           </Link>
@@ -60,19 +54,15 @@ export const Navbar = () => {
                 className={cn(
                   "text-sm font-medium transition-colors hover:text-primary",
                   location.pathname === link.href
-                    ? scrolled ? "text-primary" : "text-primary-foreground"
-                    : scrolled ? "text-muted-foreground" : "text-primary-foreground/70"
+                    ? "text-foreground"
+                    : "text-muted-foreground"
                 )}
               >
                 {link.name}
               </Link>
             ))}
             <Button
-              variant={scrolled ? "default" : "secondary"}
-              className={cn(
-                "font-medium",
-                !scrolled && "bg-primary-foreground/10 text-primary-foreground hover:bg-primary-foreground/20 border border-primary-foreground/30"
-              )}
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-glow"
               asChild
             >
               <Link to="/contact">Get a Quote</Link>
@@ -86,9 +76,9 @@ export const Navbar = () => {
             aria-label="Toggle menu"
           >
             {isOpen ? (
-              <X className={cn("h-6 w-6", scrolled ? "text-foreground" : "text-primary-foreground")} />
+              <X className="h-6 w-6 text-foreground" />
             ) : (
-              <Menu className={cn("h-6 w-6", scrolled ? "text-foreground" : "text-primary-foreground")} />
+              <Menu className="h-6 w-6 text-foreground" />
             )}
           </button>
         </div>
