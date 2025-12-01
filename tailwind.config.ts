@@ -56,6 +56,7 @@ export default {
           secondary: "hsl(var(--glass-secondary))",
           dark: "hsl(var(--glass-dark))",
           light: "hsl(var(--glass-light))",
+          accent: "hsl(var(--glass-accent))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -98,9 +99,10 @@ export default {
         "slide-up": "slide-up 0.6s ease-out forwards",
       },
       boxShadow: {
-        glass: "0 8px 32px hsla(205, 85%, 35%, 0.15)",
-        "glass-lg": "0 25px 50px -12px hsla(205, 85%, 35%, 0.25)",
-        soft: "0 4px 20px hsla(215, 25%, 15%, 0.08)",
+        glass: "0 8px 32px hsla(0, 0%, 0%, 0.4)",
+        "glass-lg": "0 25px 50px -12px hsla(0, 0%, 0%, 0.6)",
+        soft: "0 4px 20px hsla(0, 0%, 0%, 0.3)",
+        glow: "0 0 40px hsla(14, 90%, 60%, 0.15)",
       },
     },
   },

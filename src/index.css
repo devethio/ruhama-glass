@@ -6,53 +6,55 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 215 25% 15%;
+    --background: 220 30% 12%;
+    --foreground: 210 20% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card: 220 25% 16%;
+    --card-foreground: 210 20% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 220 25% 16%;
+    --popover-foreground: 210 20% 98%;
 
-    --primary: 205 85% 35%;
+    --primary: 14 90% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 200 30% 92%;
-    --secondary-foreground: 215 25% 15%;
+    --secondary: 220 20% 22%;
+    --secondary-foreground: 210 20% 98%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 220 20% 18%;
+    --muted-foreground: 215 15% 65%;
 
-    --accent: 195 75% 45%;
+    --accent: 14 90% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 210 20% 90%;
-    --input: 210 20% 90%;
-    --ring: 205 85% 35%;
+    --border: 220 20% 24%;
+    --input: 220 20% 24%;
+    --ring: 14 90% 60%;
 
     --radius: 0.5rem;
 
-    /* Custom Glass Design Tokens */
-    --glass-primary: 205 85% 35%;
-    --glass-secondary: 195 75% 45%;
-    --glass-dark: 215 35% 12%;
-    --glass-light: 200 30% 97%;
-    --glass-gradient: linear-gradient(135deg, hsl(205 85% 35%) 0%, hsl(195 75% 45%) 100%);
-    --glass-gradient-dark: linear-gradient(135deg, hsl(215 35% 12%) 0%, hsl(205 45% 25%) 100%);
-    --glass-overlay: linear-gradient(180deg, hsla(0, 0%, 100%, 0.1) 0%, hsla(0, 0%, 100%, 0) 100%);
+    /* Premium Glass Design Tokens */
+    --glass-primary: 220 30% 12%;
+    --glass-secondary: 14 90% 60%;
+    --glass-dark: 220 35% 8%;
+    --glass-light: 210 20% 98%;
+    --glass-accent: 14 90% 60%;
+    --glass-gradient: linear-gradient(135deg, hsl(220 30% 12%) 0%, hsl(220 35% 18%) 100%);
+    --glass-gradient-overlay: linear-gradient(90deg, hsl(220 30% 12% / 0.95) 0%, hsl(220 30% 12% / 0.7) 100%);
+    --glass-shimmer: linear-gradient(120deg, transparent 0%, hsla(210, 100%, 95%, 0.1) 50%, transparent 100%);
     
     /* Typography */
     --font-display: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
     
     /* Shadows */
-    --shadow-glass: 0 8px 32px hsla(205, 85%, 35%, 0.15);
-    --shadow-glass-lg: 0 25px 50px -12px hsla(205, 85%, 35%, 0.25);
-    --shadow-soft: 0 4px 20px hsla(215, 25%, 15%, 0.08);
+    --shadow-glass: 0 8px 32px hsla(0, 0%, 0%, 0.4);
+    --shadow-glass-lg: 0 25px 50px -12px hsla(0, 0%, 0%, 0.6);
+    --shadow-soft: 0 4px 20px hsla(0, 0%, 0%, 0.3);
+    --shadow-glow: 0 0 40px hsla(14, 90%, 60%, 0.15);
     
     /* Animation */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -69,33 +71,33 @@
   }
 
   .dark {
-    --background: 215 35% 8%;
+    --background: 220 30% 8%;
     --foreground: 210 20% 98%;
 
-    --card: 215 35% 12%;
+    --card: 220 25% 12%;
     --card-foreground: 210 20% 98%;
 
-    --popover: 215 35% 12%;
+    --popover: 220 25% 12%;
     --popover-foreground: 210 20% 98%;
 
-    --primary: 195 75% 50%;
-    --primary-foreground: 215 35% 8%;
+    --primary: 14 90% 60%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 215 30% 18%;
+    --secondary: 220 20% 18%;
     --secondary-foreground: 210 20% 98%;
 
-    --muted: 215 30% 18%;
+    --muted: 220 20% 14%;
     --muted-foreground: 215 15% 60%;
 
-    --accent: 205 85% 45%;
+    --accent: 14 90% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 30% 20%;
-    --input: 215 30% 20%;
-    --ring: 195 75% 50%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 14 90% 60%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -125,25 +127,41 @@
 
 @layer components {
   .glass-effect {
-    @apply backdrop-blur-md bg-white/70 border border-white/20;
+    @apply backdrop-blur-md bg-card/80 border border-border/40;
     box-shadow: var(--shadow-glass);
   }
   
   .glass-card {
-    @apply backdrop-blur-sm bg-white/80 border border-white/30 rounded-xl;
+    @apply backdrop-blur-sm bg-card/60 border border-border/30 rounded-xl;
     box-shadow: var(--shadow-soft);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--glass-shimmer);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  
+  .glass-card:hover::before {
+    opacity: 1;
+    animation: shimmer 2s infinite;
   }
   
   .gradient-primary {
     background: var(--glass-gradient);
   }
   
-  .gradient-dark {
-    background: var(--glass-gradient-dark);
+  .gradient-overlay {
+    background: var(--glass-gradient-overlay);
   }
   
   .text-gradient {
-    background: var(--glass-gradient);
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--primary)) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -154,20 +172,33 @@
   }
   
   .hover-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-glass-lg);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-glass-lg), var(--shadow-glow);
   }
   
   .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+    animation: fadeIn 0.8s ease-out forwards;
   }
   
   .animate-slide-up {
-    animation: slideUp 0.6s ease-out forwards;
+    animation: slideUp 0.8s ease-out forwards;
   }
   
   .animate-scale-in {
-    animation: scaleIn 0.5s ease-out forwards;
+    animation: scaleIn 0.6s ease-out forwards;
+  }
+  
+  .split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 100vh;
+  }
+  
+  @media (max-width: 1024px) {
+    .split-layout {
+      grid-template-columns: 1fr;
+    }
   }
 }
 
@@ -208,6 +239,15 @@
   }
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
 
