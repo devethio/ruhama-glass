@@ -1,47 +1,88 @@
 import { Link } from "react-router-dom";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-glass.jpg";
 
 export const Hero = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const imageY = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.5]);
+
   return (
-    <section className="relative min-h-screen grid lg:grid-cols-2 items-center overflow-hidden bg-background">
-      {/* Left Side - Image */}
-      <div className="relative h-[50vh] lg:h-screen order-2 lg:order-1">
-        <img
-          src={heroImage}
-          alt="Premium glass craftsmanship"
-          className="w-full h-full object-cover"
-        />
+    <section ref={ref} className="relative min-h-screen grid lg:grid-cols-2 items-center overflow-hidden bg-background">
+      {/* Left Side - Image with Parallax */}
+      <motion.div 
+        className="relative h-[50vh] lg:h-screen order-2 lg:order-1"
+        style={{ opacity }}
+      >
+        <motion.div style={{ y: imageY }} className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt="Premium glass craftsmanship"
+            className="w-full h-[120%] object-cover"
+          />
+        </motion.div>
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent lg:from-transparent lg:to-background/80" />
-      </div>
+        
+        {/* Shimmer effect */}
+        <motion.div
+          animate={{
+            x: ["-100%", "200%"],
+            opacity: [0, 0.2, 0],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "linear",
+            repeatDelay: 2,
+          }}
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"
+        />
+      </motion.div>
 
       {/* Right Side - Content */}
       <div className="relative z-10 px-6 py-20 lg:py-32 lg:px-16 order-1 lg:order-2">
         <div className="max-w-2xl lg:max-w-none">
-          <div className="animate-slide-up" style={{ animationDelay: "0.1s" }}>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
             <span className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-6 border border-primary/20">
               17+ Years of Excellence
             </span>
-          </div>
+          </motion.div>
           
-          <h1 
-            className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] mb-6 animate-slide-up"
-            style={{ animationDelay: "0.2s" }}
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-display text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[1.1] mb-6"
           >
             Innovative Manufacturing
-          </h1>
+          </motion.h1>
           
-          <p 
-            className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed animate-slide-up"
-            style={{ animationDelay: "0.3s" }}
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-lg md:text-xl text-muted-foreground mb-10 leading-relaxed"
           >
             We use cutting-edge technology to produce high-quality glass solutions for all industries. Transform your space with premium craftsmanship and precision.
-          </p>
+          </motion.p>
 
-          <div 
-            className="flex flex-col sm:flex-row gap-4 mb-16 animate-slide-up"
-            style={{ animationDelay: "0.4s" }}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 mb-16"
           >
             <Button
               size="lg"
@@ -64,26 +105,31 @@ export const Hero = () => {
                 View Our Work
               </Link>
             </Button>
-          </div>
+          </motion.div>
 
-          {/* Stats */}
-          <div 
-            className="grid grid-cols-3 gap-6 pt-8 border-t border-border/40 animate-slide-up"
-            style={{ animationDelay: "0.5s" }}
+          {/* Stats with stagger animation */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="grid grid-cols-3 gap-6 pt-8 border-t border-border/40"
           >
-            <div>
-              <p className="font-display text-3xl md:text-4xl font-bold text-foreground mb-1">17+</p>
-              <p className="text-muted-foreground text-sm">Years Experience</p>
-            </div>
-            <div>
-              <p className="font-display text-3xl md:text-4xl font-bold text-foreground mb-1">500+</p>
-              <p className="text-muted-foreground text-sm">Projects Done</p>
-            </div>
-            <div>
-              <p className="font-display text-3xl md:text-4xl font-bold text-foreground mb-1">100%</p>
-              <p className="text-muted-foreground text-sm">Satisfaction</p>
-            </div>
-          </div>
+            {[
+              { value: "17+", label: "Years Experience" },
+              { value: "500+", label: "Projects Done" },
+              { value: "100%", label: "Satisfaction" },
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
+              >
+                <p className="font-display text-3xl md:text-4xl font-bold text-foreground mb-1">{stat.value}</p>
+                <p className="text-muted-foreground text-sm">{stat.label}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

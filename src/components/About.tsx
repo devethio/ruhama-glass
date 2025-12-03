@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -10,43 +12,87 @@ const values = [
 ];
 
 export const About = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+
+  const y1 = useTransform(scrollYProgress, [0, 1], [50, -50]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [-30, 30]);
+
   return (
-    <section className="py-24 bg-muted/30">
+    <section ref={ref} className="py-24 bg-muted/30 overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image Grid */}
+          {/* Image Grid with Parallax */}
           <div className="relative">
             <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="rounded-2xl overflow-hidden shadow-glass h-48 bg-gradient-to-br from-primary/20 to-accent/20">
+              <motion.div style={{ y: y1 }} className="space-y-4">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="rounded-2xl overflow-hidden shadow-glass h-48 bg-gradient-to-br from-primary/20 to-accent/20"
+                >
                   <div className="w-full h-full gradient-primary opacity-80" />
-                </div>
-                <div className="rounded-2xl overflow-hidden shadow-soft h-64 bg-secondary">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.1 }}
+                  className="rounded-2xl overflow-hidden shadow-soft h-64 bg-secondary"
+                >
                   <div className="w-full h-full flex items-center justify-center">
                     <span className="font-display text-6xl font-bold text-primary/20">17+</span>
                   </div>
-                </div>
-              </div>
-              <div className="space-y-4 pt-8">
-                <div className="rounded-2xl overflow-hidden shadow-soft h-64 bg-secondary">
+                </motion.div>
+              </motion.div>
+              <motion.div style={{ y: y2 }} className="space-y-4 pt-8">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="rounded-2xl overflow-hidden shadow-soft h-64 bg-secondary"
+                >
                   <div className="w-full h-full flex items-center justify-center">
                     <span className="font-display text-6xl font-bold text-primary/20">500+</span>
                   </div>
-                </div>
-                <div className="rounded-2xl overflow-hidden shadow-glass h-48 bg-gradient-to-br from-accent/20 to-primary/20">
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="rounded-2xl overflow-hidden shadow-glass h-48 bg-gradient-to-br from-accent/20 to-primary/20"
+                >
                   <div className="w-full h-full gradient-dark opacity-80" />
-                </div>
-              </div>
+                </motion.div>
+              </motion.div>
             </div>
             {/* Floating Badge */}
-            <div className="absolute -bottom-6 -right-6 bg-card rounded-2xl shadow-glass-lg p-6 hidden lg:block">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="absolute -bottom-6 -right-6 bg-card rounded-2xl shadow-glass-lg p-6 hidden lg:block"
+            >
               <p className="font-display text-4xl font-bold text-primary">17+</p>
               <p className="text-muted-foreground text-sm">Years of Excellence</p>
-            </div>
+            </motion.div>
           </div>
 
           {/* Content */}
-          <div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+          >
             <span className="text-primary font-medium text-sm tracking-wider uppercase">
               About Ruhama Glass
             </span>
@@ -60,14 +106,27 @@ export const About = () => {
               We specialize in crafting mirrors of various sizes, offering modern and elegant designs that enhance both residential and commercial spaces. Our products are designed to elevate the aesthetics and functionality of any environment.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              {values.map((value) => (
-                <div key={value} className="flex items-center gap-3">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8"
+            >
+              {values.map((value, index) => (
+                <motion.div
+                  key={value}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: 0.1 * index }}
+                  className="flex items-center gap-3"
+                >
                   <CheckCircle2 className="h-5 w-5 text-primary flex-shrink-0" />
                   <span className="text-foreground text-sm">{value}</span>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             <Button size="lg" className="font-medium" asChild>
               <Link to="/about">
@@ -75,7 +134,7 @@ export const About = () => {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

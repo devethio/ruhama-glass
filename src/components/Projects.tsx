@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { motion } from "framer-motion";
+import { ArrowRight, ExternalLink, Maximize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ImageLightbox } from "./ImageLightbox";
 import projectSheger from "@/assets/project-sheger.jpg";
 import projectChebera from "@/assets/project-chebera.jpg";
 import projectMaraki from "@/assets/project-maraki.jpg";
@@ -33,11 +36,38 @@ const projects = [
   },
 ];
 
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
 export const Projects = () => {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
   return (
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row md:items-end justify-between mb-16"
+        >
           <div>
             <span className="text-primary font-medium text-sm tracking-wider uppercase">
               Our Portfolio
@@ -52,15 +82,26 @@ export const Projects = () => {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+        >
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={project.title}
-              className="group relative overflow-hidden rounded-2xl bg-card border border-border hover-lift"
+              variants={itemVariants}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              className="group relative overflow-hidden rounded-2xl bg-card border border-border"
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div
+                className="aspect-[4/3] overflow-hidden cursor-pointer"
+                onClick={() => openLightbox(index)}
+              >
                 <img
                   src={project.image}
                   alt={project.title}
@@ -79,15 +120,25 @@ export const Projects = () => {
                   {project.description}
                 </p>
               </div>
-              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <div
+                className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
+                onClick={() => openLightbox(index)}
+              >
                 <div className="w-10 h-10 rounded-full bg-primary-foreground/20 backdrop-blur-sm flex items-center justify-center">
-                  <ExternalLink className="h-4 w-4 text-primary-foreground" />
+                  <Maximize2 className="h-4 w-4 text-primary-foreground" />
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
+
+      <ImageLightbox
+        images={projects.map((p) => p.image)}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        initialIndex={lightboxIndex}
+      />
     </section>
   );
 };
