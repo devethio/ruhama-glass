@@ -24,9 +24,16 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-6">
-              <span className="font-display text-2xl font-bold">RUHAMA</span>
-              <span className="font-display text-lg text-primary-foreground/70">Glass</span>
+            <div className="flex items-center gap-3 mb-6">
+              <img
+                src="/logo.jpg"
+                alt="Ruhama Glass logo"
+                className="h-12 w-12 rounded-full object-cover border border-primary-foreground/30"
+              />
+              <div className="leading-tight">
+                <span className="font-display text-2xl font-bold block">Ruhama</span>
+                <span className="font-display text-lg text-primary-foreground/70 block -mt-1">Glass</span>
+              </div>
             </div>
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6">
               Shaping spaces with innovation and craftsmanship. Premium glass solutions for residential and commercial projects.

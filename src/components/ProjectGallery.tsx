@@ -3,18 +3,15 @@ import { motion } from "framer-motion";
 import { Maximize2 } from "lucide-react";
 import { ImageLightbox } from "./ImageLightbox";
 import { FadeIn, StaggerContainer, StaggerItem } from "./ScrollAnimations";
-import projectSheger from "@/assets/project-sheger.jpg";
-import projectChebera from "@/assets/project-chebera.jpg";
-import projectMaraki from "@/assets/project-maraki.jpg";
-import projectTemer from "@/assets/project-temer.jpg";
+import { photoLibrary } from "@/lib/photos";
 
 const galleryImages = [
-  { src: projectSheger, title: "Sheger City Head Office", category: "Commercial" },
-  { src: projectTemer, title: "Temer Real Estate", category: "Real Estate" },
-  { src: projectChebera, title: "Chebera Churchura Lodge", category: "Hospitality" },
-  { src: projectMaraki, title: "Maraki Co-Working Space", category: "Commercial" },
-  { src: projectSheger, title: "Glass Facades", category: "Architectural" },
-  { src: projectChebera, title: "Shower Enclosures", category: "Residential" },
+  { src: photoLibrary.lobby, title: "Corporate Lobby Installation", category: "Interiors" },
+  { src: photoLibrary.facade, title: "Curtain Wall Facade", category: "Architectural" },
+  { src: photoLibrary.mirror, title: "Custom Mirror Wall", category: "Residential" },
+  { src: photoLibrary.storefront, title: "Retail Storefront", category: "Commercial" },
+  { src: photoLibrary.detail, title: "Glass Detailing", category: "Finishes" },
+  { src: photoLibrary.temer, title: "Interior Partitions", category: "Workplace" },
 ];
 
 export const ProjectGallery = () => {

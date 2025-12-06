@@ -37,12 +37,19 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <span className="font-display text-2xl font-bold tracking-tight text-foreground">
-              RUHAMA
-            </span>
-            <span className="font-display text-lg font-medium text-primary">
-              Glass
-            </span>
+            <img
+              src="/logo.jpg"
+              alt="Ruhama Glass logo"
+              className="h-12 w-12 rounded-full object-cover border border-border/50 shadow-soft"
+            />
+            <div className="leading-tight">
+              <span className="font-display text-xl font-bold tracking-tight text-foreground block">
+                Ruhama
+              </span>
+              <span className="font-display text-base font-medium text-primary block -mt-1">
+                Glass
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

@@ -2,38 +2,35 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { CTA } from "@/components/CTA";
 import { ExternalLink } from "lucide-react";
-import projectSheger from "@/assets/project-sheger.jpg";
-import projectChebera from "@/assets/project-chebera.jpg";
-import projectMaraki from "@/assets/project-maraki.jpg";
-import projectTemer from "@/assets/project-temer.jpg";
+import { photoLibrary } from "@/lib/photos";
 
 const projects = [
   {
     title: "Sheger City Head Office",
     category: "Commercial",
     description: "Delivered custom glass solutions, including architectural glass installations and decorative mirrors, enhancing the office's modern aesthetic and functionality.",
-    image: projectSheger,
+    image: photoLibrary.sheger,
     services: ["Architectural Glass", "Decorative Mirrors", "Glass Partitions"],
   },
   {
     title: "Temer Real Estate",
     category: "Real Estate",
     description: "Designed and installed tempered glass partitions and custom mirrors, transforming real estate properties into sophisticated, high-value spaces.",
-    image: projectTemer,
+    image: photoLibrary.temer,
     services: ["Tempered Glass", "Custom Mirrors", "Glass Partitions"],
   },
   {
     title: "Chebera Churchura Lodge",
     category: "Hospitality",
     description: "Crafted artistic glasswork and custom shower enclosures to elevate the lodge's luxurious ambiance and guest experience.",
-    image: projectChebera,
+    image: photoLibrary.chebera,
     services: ["Artistic Glasswork", "Shower Enclosures", "Decorative Glass"],
   },
   {
     title: "Maraki Co-Working Space",
     category: "Commercial",
     description: "Provided innovative glass designs, including glass partitions and decorative panels, fostering a collaborative and stylish work environment.",
-    image: projectMaraki,
+    image: photoLibrary.maraki,
     services: ["Glass Partitions", "Decorative Panels", "Office Glass"],
   },
 ];

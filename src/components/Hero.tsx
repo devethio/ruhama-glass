@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-glass.jpg";
+import { photoLibrary } from "@/lib/photos";
 
 export const Hero = () => {
   const ref = useRef(null);
@@ -23,8 +23,8 @@ export const Hero = () => {
         style={{ opacity }}
       >
         <motion.div style={{ y: imageY }} className="absolute inset-0">
-          <img
-            src={heroImage}
+            <img
+            src={photoLibrary.hero}
             alt="Premium glass craftsmanship"
             className="w-full h-[120%] object-cover"
           />

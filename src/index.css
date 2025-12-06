@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -47,8 +47,8 @@
     --glass-shimmer: linear-gradient(120deg, transparent 0%, hsla(210, 100%, 95%, 0.1) 50%, transparent 100%);
     
     /* Typography */
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'Manrope', sans-serif;
     
     /* Shadows */
     --shadow-glass: 0 8px 32px hsla(0, 0%, 0%, 0.4);

@@ -4,16 +4,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Badge } from "@/components/ui/badge";
 import { Check, Maximize2 } from "lucide-react";
 import { ImageLightbox } from "./ImageLightbox";
-import projectSheger from "@/assets/project-sheger.jpg";
-import projectChebera from "@/assets/project-chebera.jpg";
-import projectMaraki from "@/assets/project-maraki.jpg";
-import projectTemer from "@/assets/project-temer.jpg";
+import { photoLibrary } from "@/lib/photos";
 
 const products = {
   mirrors: {
     title: "Custom Mirrors",
     description: "Precision-crafted mirrors designed to transform any space with elegance and functionality.",
-    images: [projectSheger, projectMaraki],
+    images: [photoLibrary.mirror, photoLibrary.detail, photoLibrary.lobby],
     specifications: [
       { label: "Thickness Options", value: "3mm - 12mm" },
       { label: "Edge Finishing", value: "Beveled, Polished, Flat" },
@@ -31,7 +28,7 @@ const products = {
   showerEnclosures: {
     title: "Shower Enclosures",
     description: "Elegant frameless and semi-frameless shower solutions combining safety with stunning design.",
-    images: [projectChebera, projectTemer],
+    images: [photoLibrary.temer, photoLibrary.maraki, photoLibrary.detail],
     specifications: [
       { label: "Glass Thickness", value: "8mm - 12mm Tempered" },
       { label: "Hardware Finish", value: "Chrome, Brushed Nickel, Matte Black" },
@@ -49,7 +46,7 @@ const products = {
   architectural: {
     title: "Architectural Glass",
     description: "Large-scale glass solutions for modern architecture, from curtain walls to structural glazing.",
-    images: [projectSheger, projectMaraki, projectChebera],
+    images: [photoLibrary.facade, photoLibrary.storefront, photoLibrary.chebera],
     specifications: [
       { label: "Glass Types", value: "Tempered, Laminated, Insulated" },
       { label: "Solar Control", value: "Low-E, Tinted, Reflective" },

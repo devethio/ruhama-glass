@@ -4,35 +4,32 @@ import { motion } from "framer-motion";
 import { ArrowRight, ExternalLink, Maximize2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageLightbox } from "./ImageLightbox";
-import projectSheger from "@/assets/project-sheger.jpg";
-import projectChebera from "@/assets/project-chebera.jpg";
-import projectMaraki from "@/assets/project-maraki.jpg";
-import projectTemer from "@/assets/project-temer.jpg";
+import { photoLibrary } from "@/lib/photos";
 
 const projects = [
   {
     title: "Sheger City Head Office",
     category: "Commercial",
     description: "Custom glass solutions, architectural glass installations, and decorative mirrors enhancing the modern aesthetic.",
-    image: projectSheger,
+    image: photoLibrary.sheger,
   },
   {
     title: "Temer Real Estate",
     category: "Real Estate",
     description: "Tempered glass partitions and custom mirrors transforming properties into sophisticated spaces.",
-    image: projectTemer,
+    image: photoLibrary.temer,
   },
   {
     title: "Chebera Churchura Lodge",
     category: "Hospitality",
     description: "Artistic glasswork and custom shower enclosures elevating the lodge's luxurious ambiance.",
-    image: projectChebera,
+    image: photoLibrary.chebera,
   },
   {
     title: "Maraki Co-Working Space",
     category: "Commercial",
     description: "Innovative glass partitions and decorative panels fostering a collaborative work environment.",
-    image: projectMaraki,
+    image: photoLibrary.maraki,
   },
 ];
 

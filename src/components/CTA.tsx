@@ -3,7 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowRight, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-glass.jpg";
+import { photoLibrary } from "@/lib/photos";
 
 export const CTA = () => {
   const ref = useRef(null);
@@ -19,7 +19,7 @@ export const CTA = () => {
       {/* Parallax Background */}
       <motion.div className="absolute inset-0 -z-10" style={{ y }}>
         <img
-          src={heroImage}
+          src={photoLibrary.hero}
           alt=""
           className="w-full h-[130%] object-cover"
         />

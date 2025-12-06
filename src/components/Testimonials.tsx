@@ -2,10 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import projectSheger from "@/assets/project-sheger.jpg";
-import projectChebera from "@/assets/project-chebera.jpg";
-import projectMaraki from "@/assets/project-maraki.jpg";
-import projectTemer from "@/assets/project-temer.jpg";
+import { photoLibrary } from "@/lib/photos";
 
 const testimonials = [
   {
@@ -13,7 +10,7 @@ const testimonials = [
     name: "Daniel Alemayehu",
     role: "Facilities Manager",
     company: "Sheger City Development",
-    image: projectSheger,
+    image: photoLibrary.sheger,
     rating: 5,
     text: "Ruhama Glass transformed our headquarters with stunning architectural glass installations. Their attention to detail and professional approach exceeded all expectations. The team delivered on time and the quality is exceptional.",
     project: "Sheger City Head Office",
@@ -23,7 +20,7 @@ const testimonials = [
     name: "Sara Bekele",
     role: "Interior Designer",
     company: "Temer Real Estate",
-    image: projectTemer,
+    image: photoLibrary.temer,
     rating: 5,
     text: "Working with Ruhama Glass has been an absolute pleasure. Their custom mirror solutions added tremendous value to our luxury properties. The craftsmanship and installation quality are truly world-class.",
     project: "Temer Real Estate Project",
@@ -33,7 +30,7 @@ const testimonials = [
     name: "Michael Tadesse",
     role: "Hotel Manager",
     company: "Chebera Churchura Lodge",
-    image: projectChebera,
+    image: photoLibrary.chebera,
     rating: 5,
     text: "The artistic glasswork and shower enclosures Ruhama Glass created for our lodge have become a talking point among our guests. Their expertise in hospitality glass solutions is unmatched in Ethiopia.",
     project: "Chebera Churchura Lodge",
@@ -43,7 +40,7 @@ const testimonials = [
     name: "Helen Worku",
     role: "Operations Director",
     company: "Maraki Co-Working",
-    image: projectMaraki,
+    image: photoLibrary.maraki,
     rating: 5,
     text: "Ruhama Glass understood exactly what we needed for our modern co-working space. The glass partitions create beautiful divisions while maintaining an open, collaborative atmosphere. Highly recommended!",
     project: "Maraki Co-Working Space",
