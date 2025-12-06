@@ -28,7 +28,7 @@ const products = {
   showerEnclosures: {
     title: "Shower Enclosures",
     description: "Elegant frameless and semi-frameless shower solutions combining safety with stunning design.",
-    images: [photoLibrary.temer, photoLibrary.maraki, photoLibrary.detail],
+    images: [photoLibrary.showerA, photoLibrary.showerB, photoLibrary.detail],
     specifications: [
       { label: "Glass Thickness", value: "8mm - 12mm Tempered" },
       { label: "Hardware Finish", value: "Chrome, Brushed Nickel, Matte Black" },

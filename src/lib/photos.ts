@@ -9,4 +9,6 @@ export const photoLibrary = {
   facade: "/photos/gallery-facade.jpg",
   storefront: "/photos/gallery-storefront.jpg",
   detail: "/photos/gallery-detail.jpg",
+  showerA: "/photos/_DSC6548 pg.jpg",
+  showerB: "/photos/_DSC6640 .jpg",
 } as const;

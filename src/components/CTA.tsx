@@ -88,9 +88,9 @@ export const CTA = () => {
               className="font-medium border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
               asChild
             >
-              <a href="tel:+251930449977">
+              <a href="tel:+251966494949">
                 <Phone className="mr-2 h-4 w-4" />
-                +251 930 449 977
+                +251 966 494 949
               </a>
             </Button>
           </motion.div>

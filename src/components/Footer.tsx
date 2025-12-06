@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram, Link2 } from "lucide-react";
+import { SiPinterest, SiTiktok } from "react-icons/si";
 
 const quickLinks = [
   { name: "About Us", href: "/about" },
@@ -38,30 +39,38 @@ export const Footer = () => {
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6">
               Shaping spaces with innovation and craftsmanship. Premium glass solutions for residential and commercial projects.
             </p>
-            <div className="flex gap-4">
+            <div className="flex flex-wrap gap-3">
               <a
-                href="#"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
-              >
-                <Facebook className="h-4 w-4" />
-              </a>
-              <a
-                href="#"
+                href="https://www.instagram.com/ruhama.glass"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
               >
                 <Instagram className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://web.facebook.com/profile.php?id=61567397336547"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
               >
-                <Linkedin className="h-4 w-4" />
+                <Facebook className="h-4 w-4" />
               </a>
               <a
-                href="#"
+                href="https://pin.it/6wEj43w1F"
+                target="_blank"
+                rel="noreferrer"
                 className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
               >
-                <Twitter className="h-4 w-4" />
+                <SiPinterest className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@ruhamaglassandmirror?_r=1&_t=ZM-91zVzOi0HA8"
+                target="_blank"
+                rel="noreferrer"
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
+              >
+                <SiTiktok className="h-4 w-4" />
               </a>
             </div>
           </div>
@@ -105,14 +114,23 @@ export const Footer = () => {
                   Addis Ababa, Ethiopia
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-5 w-5 text-accent flex-shrink-0" />
-                <a
-                  href="tel:+251911000000"
-                  className="text-primary-foreground/70 text-sm hover:text-primary-foreground transition-colors"
-                >
-                  +251 911 000 000
-                </a>
+              <li className="flex items-start gap-3">
+                <Phone className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
+                <div className="flex flex-col gap-1 text-primary-foreground/70 text-sm">
+                  {[
+                    { label: "+251 966 494 949", tel: "+251966494949" },
+                    { label: "+251 966 595 959", tel: "+251966595959" },
+                    { label: "+251 115 576 895", tel: "+251115576895" },
+                  ].map((phone) => (
+                    <a
+                      key={phone.tel}
+                      href={`tel:${phone.tel}`}
+                      className="hover:text-primary-foreground transition-colors"
+                    >
+                      {phone.label}
+                    </a>
+                  ))}
+                </div>
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-accent flex-shrink-0" />

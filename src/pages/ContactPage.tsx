@@ -16,12 +16,12 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+251 911 000 000", "+251 911 111 111"],
+    details: ["+251 966 494 949", "+251 966 595 959", "+251 115 576 895"],
   },
   {
     icon: Mail,
     title: "Email Us",
-    details: ["info@ruhamaglass.com", "sales@ruhamaglass.com"],
+    details: ["info@ruhamaglass.com"],
   },
   {
     icon: Clock,
@@ -163,7 +163,7 @@ const ContactPage = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        placeholder="+251 911 000 000"
+                        placeholder="+251 966 494 949"
                         className="bg-background"
                       />
                     </div>
