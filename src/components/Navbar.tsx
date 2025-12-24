@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, User, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/contexts/AuthContext";
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
   { name: "Projects", href: "/projects" },
+  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -16,6 +18,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { user, signOut } = useAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +27,11 @@ export const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const handleSignOut = async () => {
+    await signOut();
+    setIsOpen(false);
+  };
 
   return (
     <nav
@@ -53,7 +61,7 @@ export const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
@@ -68,12 +76,48 @@ export const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Button
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-glow"
-              asChild
-            >
-              <Link to="/contact">Get a Quote</Link>
-            </Button>
+            
+            {user ? (
+              <div className="flex items-center gap-3">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  asChild
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  <Link to="/dashboard">
+                    <User className="h-4 w-4 mr-1" />
+                    Dashboard
+                  </Link>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={handleSignOut}
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  <LogOut className="h-4 w-4 mr-1" />
+                  Sign Out
+                </Button>
+              </div>
+            ) : (
+              <div className="flex items-center gap-3">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  asChild
+                  className="text-muted-foreground hover:text-foreground"
+                >
+                  <Link to="/auth">Sign In</Link>
+                </Button>
+                <Button
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold shadow-glow"
+                  asChild
+                >
+                  <Link to="/contact">Get a Quote</Link>
+                </Button>
+              </div>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -109,11 +153,40 @@ export const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button className="w-full mt-2" asChild>
-                <Link to="/contact" onClick={() => setIsOpen(false)}>
-                  Get a Quote
-                </Link>
-              </Button>
+              
+              <div className="border-t border-border pt-4 mt-2 space-y-2">
+                {user ? (
+                  <>
+                    <Button className="w-full" variant="outline" asChild>
+                      <Link to="/dashboard" onClick={() => setIsOpen(false)}>
+                        <User className="h-4 w-4 mr-2" />
+                        Dashboard
+                      </Link>
+                    </Button>
+                    <Button
+                      className="w-full"
+                      variant="ghost"
+                      onClick={handleSignOut}
+                    >
+                      <LogOut className="h-4 w-4 mr-2" />
+                      Sign Out
+                    </Button>
+                  </>
+                ) : (
+                  <>
+                    <Button className="w-full" variant="outline" asChild>
+                      <Link to="/auth" onClick={() => setIsOpen(false)}>
+                        Sign In / Sign Up
+                      </Link>
+                    </Button>
+                    <Button className="w-full" asChild>
+                      <Link to="/contact" onClick={() => setIsOpen(false)}>
+                        Get a Quote
+                      </Link>
+                    </Button>
+                  </>
+                )}
+              </div>
             </div>
           </div>
         )}
