@@ -139,7 +139,7 @@ const ContactPage = () => {
                 Let’s plan your next
                 <span className="block text-sky-200">glass project with clarity</span>
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-white/82 md:text-xl">
+              <p className="max-w-2xl text-lg leading-relaxed text-white/90 md:text-xl">
                 Visit the showroom, find the workshop, or send your project details directly to our team for a consultation and quote.
               </p>
             </motion.div>
@@ -149,7 +149,7 @@ const ContactPage = () => {
               <div className="grid gap-4">
                 <div>
                   <p className="font-display text-3xl">Showroom + Workshop</p>
-                  <p className="mt-1 text-sm text-white/74">Two locations in Addis Ababa for consultation and production support.</p>
+                  <p className="mt-1 text-sm text-white/75">Two locations in Addis Ababa for consultation and production support.</p>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <span className="soft-tag border-white/10 bg-white/10 text-white">Free consultation</span>

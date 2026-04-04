@@ -68,7 +68,7 @@ const ProjectsPage = () => {
                 Signature work shaped for
                 <span className="block text-sky-200">commercial and residential spaces</span>
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-white/82 md:text-xl">
+              <p className="max-w-2xl text-lg leading-relaxed text-white/80 md:text-xl">
                 Explore selected Ruhama Glass projects across offices, hospitality venues, real estate developments, and bespoke interiors.
               </p>
             </div>
@@ -78,11 +78,11 @@ const ProjectsPage = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="font-display text-3xl">Commercial</p>
-                  <p className="mt-1 text-sm text-white/72">Offices, storefronts, shared spaces</p>
+                  <p className="mt-1 text-sm text-white/70">Offices, storefronts, shared spaces</p>
                 </div>
                 <div>
                   <p className="font-display text-3xl">Hospitality</p>
-                  <p className="mt-1 text-sm text-white/72">Lodges, guest spaces, bathrooms</p>
+                  <p className="mt-1 text-sm text-white/70">Lodges, guest spaces, bathrooms</p>
                 </div>
               </div>
             </div>

@@ -132,7 +132,7 @@ const ServicesPage = () => {
                 Premium glass services for
                 <span className="block text-sky-200">homes, workplaces, and projects</span>
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-white/82 md:text-xl">
+              <p className="max-w-2xl text-lg leading-relaxed text-white/80 md:text-xl">
                 From fabrication and edging to partitions, mirrors, shower enclosures, and architectural glazing, Ruhama Glass provides end-to-end solutions with precise installation.
               </p>
             </div>
@@ -147,7 +147,7 @@ const ServicesPage = () => {
                 ))}
               </div>
               <div className="mt-6 h-px w-full bg-white/12" />
-              <p className="mt-5 text-sm leading-relaxed text-white/78">
+              <p className="mt-5 text-sm leading-relaxed text-white/75">
                 Built for residential renovations, retail interiors, hospitality spaces, and commercial developments.
               </p>
             </div>

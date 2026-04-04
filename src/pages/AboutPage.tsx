@@ -61,7 +61,7 @@ const AboutPage = () => {
                 Crafted with precision,
                 <span className="block text-sky-200">built for lasting spaces</span>
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-white/82 md:text-xl">
+              <p className="max-w-2xl text-lg leading-relaxed text-white/80 md:text-xl">
                 Ruhama Glass brings more than 17 years of experience to custom mirrors, architectural glazing, partitions, and installation work for residential and commercial clients across Ethiopia.
               </p>
             </div>
@@ -71,15 +71,15 @@ const AboutPage = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="font-display text-4xl">17+</p>
-                  <p className="mt-1 text-sm text-white/72">Years of experience</p>
+                  <p className="mt-1 text-sm text-white/70">Years of experience</p>
                 </div>
                 <div>
                   <p className="font-display text-4xl">500+</p>
-                  <p className="mt-1 text-sm text-white/72">Projects delivered</p>
+                  <p className="mt-1 text-sm text-white/70">Projects delivered</p>
                 </div>
               </div>
               <div className="mt-6 h-px w-full bg-white/12" />
-              <p className="mt-5 text-sm leading-relaxed text-white/78">
+              <p className="mt-5 text-sm leading-relaxed text-white/75">
                 We work closely with homeowners, architects, contractors, and interior designers from concept through installation.
               </p>
             </div>

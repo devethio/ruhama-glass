@@ -199,7 +199,7 @@ const BlogPage = () => {
                 Insight, project notes,
                 <span className="block text-sky-200">and practical glass guidance</span>
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-white/82">
+              <p className="max-w-2xl text-lg leading-relaxed text-white/80">
                 Discover design insight, installation thinking, and behind-the-scenes looks at the spaces and glass systems we create.
               </p>
             </motion.div>

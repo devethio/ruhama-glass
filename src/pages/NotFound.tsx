@@ -43,7 +43,7 @@ const NotFound = () => {
                 This page
                 <span className="block text-sky-200">does not exist</span>
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-white/82 md:text-xl">
+              <p className="max-w-2xl text-lg leading-relaxed text-white/80 md:text-xl">
                 The link may be outdated, the page may have moved, or the address may be incorrect.
                 Use one of the routes below to continue browsing Ruhama Glass.
               </p>
@@ -63,11 +63,11 @@ const NotFound = () => {
 
             <div className="phi-panel p-6 text-white md:p-7">
               <p className="phi-kicker mb-4 text-sky-200">Requested Path</p>
-              <p className="break-all rounded-2xl border border-white/10 bg-white/8 px-4 py-3 text-sm text-white/82">
+              <p className="break-all rounded-2xl border border-white/10 bg-white/10 px-4 py-3 text-sm text-white/80">
                 {location.pathname}
               </p>
               <div className="mt-6 h-px w-full bg-white/12" />
-              <p className="mt-5 text-sm leading-relaxed text-white/72">
+              <p className="mt-5 text-sm leading-relaxed text-white/70">
                 If you reached this page from an old bookmark or an external link, updating that link will prevent future 404 errors.
               </p>
             </div>
