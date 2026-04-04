@@ -10,6 +10,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { z } from "zod";
+import { SEO } from "@/components/SEO";
 
 const signInSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
@@ -134,9 +135,10 @@ const AuthPage = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <SEO title="Account Access" path="/auth" noindex />
       <Navbar />
       
-      <section className="pt-32 pb-20 relative overflow-hidden">
+      <section className="page-top-offset pb-20 relative overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />

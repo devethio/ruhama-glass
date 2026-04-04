@@ -15,7 +15,7 @@ export const CTA = () => {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"]);
 
   return (
-    <section ref={ref} className="relative py-32 overflow-hidden">
+    <section ref={ref} className="section-glow phi-shell relative py-32 overflow-hidden">
       {/* Parallax Background */}
       <motion.div className="absolute inset-0 -z-10" style={{ y }}>
         <img
@@ -48,14 +48,14 @@ export const CTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="max-w-3xl mx-auto text-center"
+          className="phi-panel max-w-4xl mx-auto px-6 py-12 md:px-10 md:py-14 text-center"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-2 rounded-full bg-primary/20 text-primary-foreground text-sm font-medium mb-6 border border-primary/30"
+            className="inline-block px-4 py-2 rounded-full bg-primary/15 text-primary-foreground text-sm font-medium mb-6 border border-primary/20"
           >
             Ready to Transform Your Space?
           </motion.span>
@@ -85,7 +85,7 @@ export const CTA = () => {
             <Button
               size="lg"
               variant="outline"
-              className="font-medium border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+              className="bg-primary/15 font-medium border-primary-foreground/30 text-primary-foreground hover:bg-primary/25 hover:text-primary-foreground"
               asChild
             >
               <a href="tel:+251966494949">

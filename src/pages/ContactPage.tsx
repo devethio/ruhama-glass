@@ -7,31 +7,50 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { MapPin, Phone, Mail, Clock, Send, ArrowRight } from "lucide-react";
+import { SEO } from "@/components/SEO";
+import { buildBreadcrumbJsonLd, buildLocalBusinessJsonLd } from "@/lib/seo";
+
+const locations = [
+  {
+    id: "showroom",
+    title: "Ruhama Glass Showroom",
+    subtitle: "Bole Road, Addis Ababa, Ethiopia",
+    embedSrc: "https://www.google.com/maps?q=9.0054,38.7636&z=16&output=embed",
+    directionsHref: "https://maps.google.com/?q=9.0054,38.7636",
+  },
+  {
+    id: "workshop",
+    title: "Ruhama Glass Workshop",
+    subtitle: "Workshop location, Addis Ababa, Ethiopia",
+    embedSrc: "https://www.google.com/maps?q=9.004380,38.779761&z=16&output=embed",
+    directionsHref: "https://maps.google.com/?q=9.004380,38.779761",
+  },
+];
 
 const contactInfo = [
   {
     icon: MapPin,
     title: "Visit Us",
     details: ["Addis Ababa, Ethiopia", "Near Bole Road"],
-    color: "from-blue-500 to-cyan-500",
+    color: "from-[#1274B8] to-[#0E77C3]",
   },
   {
     icon: Phone,
     title: "Call Us",
     details: ["+251 966 494 949", "+251 966 595 959", "+251 115 576 895"],
-    color: "from-emerald-500 to-teal-500",
+    color: "from-[#0E77C3] to-[#447CA4]",
   },
   {
     icon: Mail,
     title: "Email Us",
     details: ["info@ruhamaglass.com"],
-    color: "from-purple-500 to-pink-500",
+    color: "from-[#447CA4] to-[#1274B8]",
   },
   {
     icon: Clock,
     title: "Working Hours",
     details: ["Mon - Fri: 8:00 AM - 6:00 PM", "Sat: 9:00 AM - 4:00 PM"],
-    color: "from-orange-500 to-amber-500",
+    color: "from-slate-600 to-[#447CA4]",
   },
 ];
 
@@ -88,10 +107,23 @@ const ContactPage = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <SEO
+        title="Contact Ruhama Glass"
+        description="Contact Ruhama Glass for quotes, consultations, showroom visits, and workshop directions in Addis Ababa, Ethiopia."
+        keywords="contact Ruhama Glass, glass showroom Addis Ababa, glass workshop Addis Ababa, glass quote Ethiopia"
+        path="/contact"
+        jsonLd={[
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Contact", path: "/contact" },
+          ]),
+          buildLocalBusinessJsonLd(),
+        ]}
+      />
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative page-top-offset pb-20 overflow-hidden">
         <div className="absolute inset-0 gradient-dark" />
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAyNHYySDI0di0yaDEyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
         
@@ -167,44 +199,47 @@ const ContactPage = () => {
               transition={{ duration: 0.6 }}
               className="order-2 lg:order-1"
             >
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-accent/20 via-primary/10 to-accent/20 rounded-3xl blur-xl opacity-50" />
-                <div className="relative rounded-2xl overflow-hidden border border-border shadow-2xl">
-                  <div className="aspect-[4/3] w-full">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5459369045373!2d38.7636!3d9.0054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDAnMTkuNCJOIDM4wrA0NSc0OS4wIkU!5e0!3m2!1sen!2set!4v1620000000000!5m2!1sen!2set"
-                      width="100%"
-                      height="100%"
-                      style={{ border: 0 }}
-                      allowFullScreen
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      title="Ruhama Glass Location"
-                      className="grayscale hover:grayscale-0 transition-all duration-500"
-                    />
-                  </div>
-                  
-                  {/* Map Overlay Card */}
-                  <div className="absolute bottom-4 left-4 right-4 p-4 bg-card/95 backdrop-blur-md rounded-xl border border-border shadow-lg">
-                    <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 rounded-lg bg-accent/20 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="h-5 w-5 text-accent" />
+              <div className="grid gap-6 md:grid-cols-2">
+                {locations.map((location) => (
+                  <div key={location.id} className="relative">
+                    <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-accent/20 via-primary/10 to-accent/20 blur-xl opacity-50" />
+                    <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl">
+                      <div className="aspect-[4/5] w-full">
+                        <iframe
+                          src={location.embedSrc}
+                          width="100%"
+                          height="100%"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          title={location.title}
+                          className="grayscale hover:grayscale-0 transition-all duration-500"
+                        />
                       </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground text-sm">Ruhama Glass Showroom</h4>
-                        <p className="text-muted-foreground text-xs mt-1">Bole Road, Addis Ababa, Ethiopia</p>
-                        <a 
-                          href="https://maps.google.com/?q=9.0054,38.7636" 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-accent text-xs mt-2 hover:underline"
-                        >
-                          Get Directions <ArrowRight className="h-3 w-3" />
-                        </a>
+
+                      <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-border bg-card/95 p-4 shadow-lg backdrop-blur-md">
+                        <div className="flex items-start gap-3">
+                          <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-accent/20">
+                            <MapPin className="h-5 w-5 text-accent" />
+                          </div>
+                          <div>
+                            <h4 className="text-sm font-semibold text-foreground">{location.title}</h4>
+                            <p className="mt-1 text-xs text-muted-foreground">{location.subtitle}</p>
+                            <a
+                              href={location.directionsHref}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="mt-2 inline-flex items-center gap-1 text-xs text-accent hover:underline"
+                            >
+                              Get Directions <ArrowRight className="h-3 w-3" />
+                            </a>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
 
               {/* Quick Actions */}
@@ -213,8 +248,8 @@ const ContactPage = () => {
                   href="tel:+251966494949"
                   className="flex items-center gap-3 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-emerald-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Phone className="h-5 w-5 text-emerald-500" />
+                  <div className="w-10 h-10 rounded-lg bg-primary/15 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Phone className="h-5 w-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground">Call Now</p>
@@ -225,8 +260,8 @@ const ContactPage = () => {
                   href="mailto:info@ruhamaglass.com"
                   className="flex items-center gap-3 p-4 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Mail className="h-5 w-5 text-purple-500" />
+                  <div className="w-10 h-10 rounded-lg bg-accent/25 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
                     <p className="text-xs text-muted-foreground">Email Us</p>

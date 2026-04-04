@@ -1,6 +1,8 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { CTA } from "@/components/CTA";
+import { SEO } from "@/components/SEO";
+import { buildBreadcrumbJsonLd, buildServiceListJsonLd } from "@/lib/seo";
 import { 
   Scissors, Square, Home, Palette, Building2, Armchair, 
   Frame, Shield, Wrench, CircleDot, Sparkles, Box
@@ -103,10 +105,23 @@ const accessories = [
 const ServicesPage = () => {
   return (
     <main className="min-h-screen">
+      <SEO
+        title="Glass Products and Services"
+        description="Explore Ruhama Glass services including custom mirrors, shower enclosures, glass cutting, partitions, architectural glazing, decorative glass, and installation in Addis Ababa and Ethiopia."
+        keywords="glass services Addis Ababa, custom mirrors Ethiopia, glass installation Addis Ababa, shower glass Ethiopia, architectural glass services"
+        path="/services"
+        jsonLd={[
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Services", path: "/services" },
+          ]),
+          buildServiceListJsonLd(services.map((service) => service.title)),
+        ]}
+      />
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 gradient-dark">
+      <section className="page-top-offset pb-16 gradient-dark">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl">
             <span className="text-accent font-medium text-sm tracking-wider uppercase">

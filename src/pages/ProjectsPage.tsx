@@ -3,6 +3,8 @@ import { Footer } from "@/components/Footer";
 import { CTA } from "@/components/CTA";
 import { ExternalLink } from "lucide-react";
 import { photoLibrary } from "@/lib/photos";
+import { SEO } from "@/components/SEO";
+import { buildBreadcrumbJsonLd, buildCollectionPageJsonLd } from "@/lib/seo";
 
 const projects = [
   {
@@ -38,10 +40,26 @@ const projects = [
 const ProjectsPage = () => {
   return (
     <main className="min-h-screen">
+      <SEO
+        title="Projects and Portfolio"
+        description="View Ruhama Glass projects across commercial, hospitality, workplace, and residential spaces, including mirrors, partitions, façades, and shower enclosures."
+        keywords="Ruhama Glass projects, glass portfolio Ethiopia, commercial glass Addis Ababa, mirror projects Ethiopia"
+        path="/projects"
+        jsonLd={[
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Projects", path: "/projects" },
+          ]),
+          buildCollectionPageJsonLd(
+            "Ruhama Glass Projects",
+            projects.map((project) => ({ name: project.title })),
+          ),
+        ]}
+      />
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 gradient-dark">
+      <section className="page-top-offset pb-16 gradient-dark">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl">
             <span className="text-accent font-medium text-sm tracking-wider uppercase">

@@ -9,6 +9,15 @@ npm install
 npm run dev
 ```
 
+## Supabase setup
+
+1) Copy `.env.example` to `.env` and fill in your project URL + anon key.
+2) Apply the database migrations with the Supabase CLI:
+
+```sh
+npx supabase db push
+```
+
 ## Build
 
 ```sh

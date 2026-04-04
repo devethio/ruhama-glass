@@ -11,6 +11,7 @@ import { Footer } from "@/components/Footer";
 import { useAuth } from "@/contexts/AuthContext";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
+import { SEO } from "@/components/SEO";
 
 interface QuoteRequest {
   id: string;
@@ -131,9 +132,10 @@ const DashboardPage = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <SEO title="Member Dashboard" path="/dashboard" noindex />
       <Navbar />
       
-      <section className="pt-32 pb-20">
+      <section className="page-top-offset pb-20">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-4 gap-8">
             {/* Sidebar */}

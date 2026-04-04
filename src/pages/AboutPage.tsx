@@ -2,6 +2,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { CTA } from "@/components/CTA";
 import { CheckCircle2, Target, Eye, Heart, Users, Award, Lightbulb } from "lucide-react";
+import { SEO } from "@/components/SEO";
+import { buildBreadcrumbJsonLd } from "@/lib/seo";
 
 const values = [
   {
@@ -37,10 +39,20 @@ const whyChooseUs = [
 const AboutPage = () => {
   return (
     <main className="min-h-screen">
+      <SEO
+        title="About Ruhama Glass"
+        description="Learn about Ruhama Glass, our experience, values, mission, and commitment to delivering premium glass solutions for homes and businesses in Ethiopia."
+        keywords="about Ruhama Glass, glass company Ethiopia, glass experts Addis Ababa, custom glass craftsmanship"
+        path="/about"
+        jsonLd={buildBreadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ])}
+      />
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 gradient-dark">
+      <section className="page-top-offset pb-16 gradient-dark">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="max-w-3xl">
             <span className="text-accent font-medium text-sm tracking-wider uppercase">

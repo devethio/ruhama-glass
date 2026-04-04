@@ -6,6 +6,8 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { supabase } from "@/integrations/supabase/client";
 import { photoLibrary } from "@/lib/photos";
+import { SEO } from "@/components/SEO";
+import { buildBreadcrumbJsonLd, buildCollectionPageJsonLd } from "@/lib/seo";
 
 interface BlogPost {
   id: string;
@@ -159,10 +161,26 @@ const BlogPage = () => {
 
   return (
     <main className="min-h-screen bg-background">
+      <SEO
+        title="Blog and Glass Design Insights"
+        description="Read Ruhama Glass articles on glass design, mirrors, partitions, façades, storefronts, and practical guidance for residential and commercial projects."
+        keywords="glass blog Ethiopia, mirror design tips, storefront glass insights, glass partitions blog Addis Ababa"
+        path="/blog"
+        jsonLd={[
+          buildBreadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Blog", path: "/blog" },
+          ]),
+          buildCollectionPageJsonLd(
+            "Ruhama Glass Blog",
+            displayedPosts.map((post) => ({ name: post.title })),
+          ),
+        ]}
+      />
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 relative overflow-hidden">
+      <section className="page-top-offset pb-16 relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />

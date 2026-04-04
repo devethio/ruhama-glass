@@ -12,21 +12,21 @@ export default {
   			'2xl': '1400px'
   		}
   	},
-  	extend: {
-  		fontFamily: {
-  			display: [
-  				'Cormorant Garamond',
-  				'serif'
-  			],
-  			body: [
-  				'Manrope',
-  				'sans-serif'
-  			],
-  			sans: [
-  				'Inter',
-  				'ui-sans-serif',
-  				'system-ui',
-  				'-apple-system',
+  		extend: {
+  			fontFamily: {
+  				display: [
+  					'Bodoni Moda',
+  					'serif'
+  				],
+  				body: [
+  					'Plus Jakarta Sans',
+  					'sans-serif'
+  				],
+  				sans: [
+  					'Plus Jakarta Sans',
+  					'ui-sans-serif',
+  					'system-ui',
+  					'-apple-system',
   				'BlinkMacSystemFont',
   				'Segoe UI',
   				'Roboto',
@@ -34,21 +34,20 @@ export default {
   				'Arial',
   				'Noto Sans',
   				'sans-serif'
-  			],
-  			serif: [
-  				'Lora',
-  				'ui-serif',
-  				'Georgia',
-  				'Cambria',
+  				],
+  				serif: [
+  					'Bodoni Moda',
+  					'ui-serif',
+  					'Georgia',
+  					'Cambria',
   				'Times New Roman',
   				'Times',
   				'serif'
-  			],
-  			mono: [
-  				'Space Mono',
-  				'ui-monospace',
-  				'SFMono-Regular',
-  				'Menlo',
+  				],
+  				mono: [
+  					'ui-monospace',
+  					'SFMono-Regular',
+  					'Menlo',
   				'Monaco',
   				'Consolas',
   				'Liberation Mono',
@@ -155,12 +154,12 @@ export default {
   			'fade-in': 'fade-in 0.6s ease-out forwards',
   			'slide-up': 'slide-up 0.6s ease-out forwards'
   		},
-  		boxShadow: {
-  			glass: '0 8px 32px hsla(0, 0%, 0%, 0.4)',
-  			'glass-lg': '0 25px 50px -12px hsla(0, 0%, 0%, 0.6)',
-  			soft: '0 4px 20px hsla(0, 0%, 0%, 0.3)',
-  			glow: '0 0 40px hsla(14, 90%, 60%, 0.15)',
-  			'2xs': 'var(--shadow-2xs)',
+  			boxShadow: {
+  				glass: '0 8px 32px hsla(0, 0%, 0%, 0.4)',
+  				'glass-lg': '0 25px 50px -12px hsla(0, 0%, 0%, 0.6)',
+  				soft: '0 4px 20px hsla(0, 0%, 0%, 0.3)',
+  				glow: '0 0 40px hsla(205, 86%, 41%, 0.22)',
+  				'2xs': 'var(--shadow-2xs)',
   			xs: 'var(--shadow-xs)',
   			sm: 'var(--shadow-sm)',
   			md: 'var(--shadow-md)',

@@ -39,22 +39,22 @@ export const Navbar = () => {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
           ? "bg-background/98 backdrop-blur-md border-b border-border/40 py-3"
-          : "bg-background/40 backdrop-blur-sm py-5"
+          : "bg-background/70 backdrop-blur-sm py-4"
       )}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-3">
             <img
               src="/logo.jpg"
               alt="Ruhama Glass logo"
               className="h-12 w-12 rounded-full object-cover border border-border/50 shadow-soft"
             />
             <div className="leading-tight">
-              <span className="font-display text-xl font-bold tracking-tight text-foreground block">
+              <span className="font-display text-[1.2rem] font-semibold tracking-[-0.04em] text-foreground block">
                 Ruhama
               </span>
-              <span className="font-display text-base font-medium text-primary block -mt-1">
+              <span className="text-[0.68rem] font-semibold uppercase tracking-[0.34em] text-primary/90 block mt-0.5">
                 Glass
               </span>
             </div>
@@ -67,7 +67,7 @@ export const Navbar = () => {
                 key={link.name}
                 to={link.href}
                 className={cn(
-                  "text-sm font-medium transition-colors hover:text-primary",
+                  "text-[0.92rem] font-medium transition-colors hover:text-primary",
                   location.pathname === link.href
                     ? "text-foreground"
                     : "text-muted-foreground"
