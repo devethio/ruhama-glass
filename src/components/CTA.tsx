@@ -55,14 +55,14 @@ export const CTA = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-2 rounded-full bg-primary/15 text-primary-foreground text-sm font-medium mb-6 border border-primary/20"
+            className="mb-6 inline-block rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-sky-100"
           >
             Ready to Transform Your Space?
           </motion.span>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
+          <h2 className="mb-6 font-display text-3xl font-bold text-white md:text-4xl lg:text-5xl">
             Let's Create Something Beautiful Together
           </h2>
-          <p className="text-primary-foreground/80 text-lg md:text-xl mb-10 leading-relaxed">
+          <p className="mb-10 text-lg leading-relaxed text-white/80 md:text-xl">
             Contact us today for a free consultation and discover how our premium glass solutions can elevate your project to new heights.
           </p>
           <motion.div
@@ -74,7 +74,7 @@ export const CTA = () => {
           >
             <Button
               size="lg"
-              className="font-medium bg-primary-foreground text-glass-dark hover:bg-primary-foreground/90"
+              className="bg-white font-medium text-glass-dark hover:bg-white/90"
               asChild
             >
               <Link to="/contact">
@@ -85,7 +85,7 @@ export const CTA = () => {
             <Button
               size="lg"
               variant="outline"
-              className="bg-primary/15 font-medium border-primary-foreground/30 text-primary-foreground hover:bg-primary/25 hover:text-primary-foreground"
+              className="border-white/25 bg-white/10 font-medium text-white hover:bg-white/15 hover:text-white"
               asChild
             >
               <a href="tel:+251966494949">

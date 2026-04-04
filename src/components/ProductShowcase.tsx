@@ -155,8 +155,8 @@ export const ProductShowcase = () => {
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-glass-dark/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                        <div className="w-14 h-14 rounded-full bg-primary-foreground/20 backdrop-blur-sm flex items-center justify-center">
-                          <Maximize2 className="h-6 w-6 text-primary-foreground" />
+                        <div className="flex h-14 w-14 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                          <Maximize2 className="h-6 w-6 text-white" />
                         </div>
                       </div>
                     </div>

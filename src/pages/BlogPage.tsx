@@ -194,22 +194,22 @@ const BlogPage = () => {
               transition={{ duration: 0.6 }}
               className="max-w-3xl"
             >
-              <span className="eyebrow-line text-accent">Our Blog</span>
-              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl">
+              <span className="eyebrow-line text-sky-200">Our Blog</span>
+              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl">
                 Insight, project notes,
-                <span className="block text-accent">and practical glass guidance</span>
+                <span className="block text-sky-200">and practical glass guidance</span>
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/82">
+              <p className="max-w-2xl text-lg leading-relaxed text-white/82">
                 Discover design insight, installation thinking, and behind-the-scenes looks at the spaces and glass systems we create.
               </p>
             </motion.div>
 
-            <div className="phi-panel p-6 text-primary-foreground md:p-7">
-              <p className="phi-kicker mb-4 text-accent">What You’ll Find</p>
+            <div className="phi-panel p-6 text-white md:p-7">
+              <p className="phi-kicker mb-4 text-sky-200">What You’ll Find</p>
               <div className="flex flex-wrap gap-3">
-                <span className="soft-tag border-white/10 bg-white/10 text-primary-foreground">Project notes</span>
-                <span className="soft-tag border-white/10 bg-white/10 text-primary-foreground">Design insight</span>
-                <span className="soft-tag border-white/10 bg-white/10 text-primary-foreground">Material guidance</span>
+                <span className="soft-tag border-white/10 bg-white/10 text-white">Project notes</span>
+                <span className="soft-tag border-white/10 bg-white/10 text-white">Design insight</span>
+                <span className="soft-tag border-white/10 bg-white/10 text-white">Material guidance</span>
               </div>
             </div>
           </div>
@@ -256,7 +256,7 @@ const BlogPage = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-glass-dark/60 via-glass-dark/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <span className="absolute top-4 left-4 px-3 py-1 bg-primary-foreground/90 text-glass-dark text-xs font-bold rounded-full">
+                  <span className="absolute top-4 left-4 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-glass-dark">
                     {highlight.tag}
                   </span>
                 </div>
@@ -334,7 +334,7 @@ const BlogPage = () => {
                       </div>
                     )}
                     {index === 0 && (
-                      <span className="absolute top-4 left-4 px-3 py-1 bg-accent text-accent-foreground text-xs font-bold rounded-full">
+                      <span className="absolute top-4 left-4 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
                         {latestLabel}
                       </span>
                     )}

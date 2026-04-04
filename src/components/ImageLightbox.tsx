@@ -79,7 +79,7 @@ export const ImageLightbox = ({
             <Button
               variant="ghost"
               size="icon"
-              className="text-primary-foreground hover:bg-primary-foreground/20"
+              className="text-white hover:bg-white/20"
               onClick={(e) => {
                 e.stopPropagation();
                 setIsZoomed(!isZoomed);
@@ -90,7 +90,7 @@ export const ImageLightbox = ({
             <Button
               variant="ghost"
               size="icon"
-              className="text-primary-foreground hover:bg-primary-foreground/20"
+              className="text-white hover:bg-white/20"
               onClick={onClose}
             >
               <X className="h-5 w-5" />
@@ -99,7 +99,7 @@ export const ImageLightbox = ({
 
           {/* Image Counter */}
           <div className="absolute top-4 left-4 z-10">
-            <span className="text-primary-foreground/80 text-sm font-medium">
+            <span className="text-sm font-medium text-white/80">
               {currentIndex + 1} / {images.length}
             </span>
           </div>
@@ -110,7 +110,7 @@ export const ImageLightbox = ({
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute left-4 z-10 text-primary-foreground hover:bg-primary-foreground/20 h-12 w-12"
+                className="absolute left-4 z-10 h-12 w-12 text-white hover:bg-white/20"
                 onClick={(e) => {
                   e.stopPropagation();
                   handlePrevious();
@@ -121,7 +121,7 @@ export const ImageLightbox = ({
               <Button
                 variant="ghost"
                 size="icon"
-                className="absolute right-4 z-10 text-primary-foreground hover:bg-primary-foreground/20 h-12 w-12"
+                className="absolute right-4 z-10 h-12 w-12 text-white hover:bg-white/20"
                 onClick={(e) => {
                   e.stopPropagation();
                   handleNext();

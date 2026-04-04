@@ -56,30 +56,30 @@ const AboutPage = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="page-hero-grid">
             <div className="max-w-3xl">
-              <span className="eyebrow-line text-accent">About Us</span>
-              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl">
+              <span className="eyebrow-line text-sky-200">About Us</span>
+              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl">
                 Crafted with precision,
-                <span className="block text-accent">built for lasting spaces</span>
+                <span className="block text-sky-200">built for lasting spaces</span>
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/82 md:text-xl">
+              <p className="max-w-2xl text-lg leading-relaxed text-white/82 md:text-xl">
                 Ruhama Glass brings more than 17 years of experience to custom mirrors, architectural glazing, partitions, and installation work for residential and commercial clients across Ethiopia.
               </p>
             </div>
 
-            <div className="phi-panel p-6 text-primary-foreground md:p-7">
-              <p className="phi-kicker mb-4 text-accent">At a Glance</p>
+            <div className="phi-panel p-6 text-white md:p-7">
+              <p className="phi-kicker mb-4 text-sky-200">At a Glance</p>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="font-display text-4xl">17+</p>
-                  <p className="mt-1 text-sm text-primary-foreground/72">Years of experience</p>
+                  <p className="mt-1 text-sm text-white/72">Years of experience</p>
                 </div>
                 <div>
                   <p className="font-display text-4xl">500+</p>
-                  <p className="mt-1 text-sm text-primary-foreground/72">Projects delivered</p>
+                  <p className="mt-1 text-sm text-white/72">Projects delivered</p>
                 </div>
               </div>
               <div className="mt-6 h-px w-full bg-white/12" />
-              <p className="mt-5 text-sm leading-relaxed text-primary-foreground/78">
+              <p className="mt-5 text-sm leading-relaxed text-white/78">
                 We work closely with homeowners, architects, contractors, and interior designers from concept through installation.
               </p>
             </div>

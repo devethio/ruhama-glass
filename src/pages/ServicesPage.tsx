@@ -127,27 +127,27 @@ const ServicesPage = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="page-hero-grid">
             <div className="max-w-3xl">
-              <span className="eyebrow-line text-accent">Our Services</span>
-              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl">
+              <span className="eyebrow-line text-sky-200">Our Services</span>
+              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl">
                 Premium glass services for
-                <span className="block text-accent">homes, workplaces, and projects</span>
+                <span className="block text-sky-200">homes, workplaces, and projects</span>
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/82 md:text-xl">
+              <p className="max-w-2xl text-lg leading-relaxed text-white/82 md:text-xl">
                 From fabrication and edging to partitions, mirrors, shower enclosures, and architectural glazing, Ruhama Glass provides end-to-end solutions with precise installation.
               </p>
             </div>
 
-            <div className="phi-panel p-6 text-primary-foreground md:p-7">
-              <p className="phi-kicker mb-4 text-accent">Service Focus</p>
+            <div className="phi-panel p-6 text-white md:p-7">
+              <p className="phi-kicker mb-4 text-sky-200">Service Focus</p>
               <div className="flex flex-wrap gap-3">
                 {serviceHighlights.map((item) => (
-                  <span key={item} className="soft-tag border-white/10 bg-white/8 text-primary-foreground">
+                  <span key={item} className="soft-tag border-white/10 bg-white/10 text-white">
                     {item}
                   </span>
                 ))}
               </div>
               <div className="mt-6 h-px w-full bg-white/12" />
-              <p className="mt-5 text-sm leading-relaxed text-primary-foreground/78">
+              <p className="mt-5 text-sm leading-relaxed text-white/78">
                 Built for residential renovations, retail interiors, hospitality spaces, and commercial developments.
               </p>
             </div>

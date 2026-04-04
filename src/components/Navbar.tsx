@@ -4,6 +4,7 @@ import { Menu, X, User, LogOut } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/contexts/AuthContext";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -81,6 +82,7 @@ export const Navbar = () => {
             
             {user ? (
               <div className="flex items-center gap-3">
+                <ThemeToggle />
                 <Button
                   variant="ghost"
                   size="sm"
@@ -104,6 +106,7 @@ export const Navbar = () => {
               </div>
             ) : (
               <div className="flex items-center gap-3">
+                <ThemeToggle />
                 <Button
                   variant="ghost"
                   size="sm"
@@ -157,6 +160,7 @@ export const Navbar = () => {
               ))}
               
               <div className="border-t border-border pt-4 mt-2 space-y-2">
+                <ThemeToggle mobile />
                 {user ? (
                   <>
                     <Button className="w-full" variant="outline" asChild>

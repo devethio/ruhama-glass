@@ -128,13 +128,13 @@ export const Projects = () => {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-glass-dark via-glass-dark/25 to-transparent opacity-85" />
               <div className="absolute inset-x-0 bottom-0 p-6 md:p-7">
-                <span className="mb-3 inline-block rounded-full border border-primary/30 bg-primary/20 px-3 py-1 text-xs font-medium text-primary-foreground">
+                <span className="mb-3 inline-block rounded-full border border-white/25 bg-white/12 px-3 py-1 text-xs font-medium text-white">
                   {project.category}
                 </span>
-                <h3 className="mb-2 font-display text-xl font-semibold text-primary-foreground md:text-2xl">
+                <h3 className="mb-2 font-display text-xl font-semibold text-white md:text-2xl">
                   {project.title}
                 </h3>
-                <p className="max-w-xl text-sm text-primary-foreground/75 line-clamp-2">
+                <p className="max-w-xl text-sm text-white/75 line-clamp-2">
                   {project.description}
                 </p>
               </div>
@@ -142,8 +142,8 @@ export const Projects = () => {
                 className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity cursor-pointer"
                 onClick={() => openLightbox(index)}
               >
-                <div className="w-10 h-10 rounded-full bg-primary-foreground/20 backdrop-blur-sm flex items-center justify-center">
-                  <Maximize2 className="h-4 w-4 text-primary-foreground" />
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                  <Maximize2 className="h-4 w-4 text-white" />
                 </div>
               </div>
             </motion.div>

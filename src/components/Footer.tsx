@@ -22,7 +22,7 @@ const services = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-glass-dark text-primary-foreground">
+    <footer className="bg-glass-dark text-white">
       <div className="container mx-auto px-4 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
@@ -37,10 +37,10 @@ export const Footer = () => {
               </div>
               <div className="leading-tight">
                 <span className="font-display text-[1.9rem] font-bold block">Ruhama</span>
-                <span className="text-[0.72rem] font-semibold uppercase tracking-[0.34em] text-primary-foreground/75 block mt-1">Glass</span>
+                <span className="mt-1 block text-[0.72rem] font-semibold uppercase tracking-[0.34em] text-white/75">Glass</span>
               </div>
             </div>
-            <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6">
+            <p className="mb-6 text-sm leading-relaxed text-white/70">
               Shaping spaces with innovation and craftsmanship. Premium glass solutions for residential and commercial projects.
             </p>
             <div className="flex flex-wrap gap-3">
@@ -48,7 +48,7 @@ export const Footer = () => {
                 href="https://www.instagram.com/ruhama.glass"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
               >
                 <Instagram className="h-4 w-4" />
               </a>
@@ -56,7 +56,7 @@ export const Footer = () => {
                 href="https://web.facebook.com/profile.php?id=61567397336547"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
               >
                 <Facebook className="h-4 w-4" />
               </a>
@@ -64,7 +64,7 @@ export const Footer = () => {
                 href="https://pin.it/6wEj43w1F"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
               >
                 <SiPinterest className="h-4 w-4" />
               </a>
@@ -72,7 +72,7 @@ export const Footer = () => {
                 href="https://www.tiktok.com/@ruhamaglassandmirror?_r=1&_t=ZM-91zVzOi0HA8"
                 target="_blank"
                 rel="noreferrer"
-                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-primary-foreground/20 transition-colors"
+                className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
               >
                 <SiTiktok className="h-4 w-4" />
               </a>
@@ -87,7 +87,7 @@ export const Footer = () => {
                 <li key={link.name}>
                   <Link
                     to={link.href}
-                    className="text-primary-foreground/70 text-sm hover:text-primary-foreground transition-colors"
+                    className="text-sm text-white/70 transition-colors hover:text-white"
                   >
                     {link.name}
                   </Link>
@@ -102,7 +102,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
-                  <span className="text-primary-foreground/70 text-sm">{service}</span>
+                  <span className="text-sm text-white/70">{service}</span>
                 </li>
               ))}
             </ul>
@@ -113,14 +113,14 @@ export const Footer = () => {
             <h4 className="font-display text-lg font-semibold mb-6">Contact Us</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
-                <MapPin className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/70 text-sm">
+                <MapPin className="mt-0.5 h-5 w-5 flex-shrink-0 text-sky-200" />
+                <span className="text-sm text-white/70">
                   Addis Ababa, Ethiopia
                 </span>
               </li>
               <li className="flex items-start gap-3">
-                <Phone className="h-5 w-5 text-accent flex-shrink-0 mt-0.5" />
-                <div className="flex flex-col gap-1 text-primary-foreground/70 text-sm">
+                <Phone className="mt-0.5 h-5 w-5 flex-shrink-0 text-sky-200" />
+                <div className="flex flex-col gap-1 text-sm text-white/70">
                   {[
                     { label: "+251 966 494 949", tel: "+251966494949" },
                     { label: "+251 966 595 959", tel: "+251966595959" },
@@ -129,7 +129,7 @@ export const Footer = () => {
                     <a
                       key={phone.tel}
                       href={`tel:${phone.tel}`}
-                      className="hover:text-primary-foreground transition-colors"
+                      className="transition-colors hover:text-white"
                     >
                       {phone.label}
                     </a>
@@ -137,10 +137,10 @@ export const Footer = () => {
                 </div>
               </li>
               <li className="flex items-center gap-3">
-                <Mail className="h-5 w-5 text-accent flex-shrink-0" />
+                <Mail className="h-5 w-5 flex-shrink-0 text-sky-200" />
                 <a
                   href="mailto:info@ruhamaglass.com"
-                  className="text-primary-foreground/70 text-sm hover:text-primary-foreground transition-colors"
+                  className="text-sm text-white/70 transition-colors hover:text-white"
                 >
                   info@ruhamaglass.com
                 </a>
@@ -151,17 +151,17 @@ export const Footer = () => {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-primary-foreground/10">
+      <div className="border-t border-white/10">
         <div className="container mx-auto px-4 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-primary-foreground/50 text-sm">
+            <p className="text-sm text-white/50">
               © {new Date().getFullYear()} Ruhama Glass. All rights reserved.
             </p>
             <div className="flex gap-6">
-              <a href="#" className="text-primary-foreground/50 text-sm hover:text-primary-foreground transition-colors">
+              <a href="#" className="text-sm text-white/50 transition-colors hover:text-white">
                 Privacy Policy
               </a>
-              <a href="#" className="text-primary-foreground/50 text-sm hover:text-primary-foreground transition-colors">
+              <a href="#" className="text-sm text-white/50 transition-colors hover:text-white">
                 Terms of Service
               </a>
             </div>

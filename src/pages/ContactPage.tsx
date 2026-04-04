@@ -134,26 +134,26 @@ const ContactPage = () => {
               transition={{ duration: 0.6 }}
               className="max-w-3xl"
             >
-              <span className="eyebrow-line text-accent">Contact Us</span>
-              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl">
+              <span className="eyebrow-line text-sky-200">Contact Us</span>
+              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl">
                 Let’s plan your next
-                <span className="block text-accent">glass project with clarity</span>
+                <span className="block text-sky-200">glass project with clarity</span>
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/82 md:text-xl">
+              <p className="max-w-2xl text-lg leading-relaxed text-white/82 md:text-xl">
                 Visit the showroom, find the workshop, or send your project details directly to our team for a consultation and quote.
               </p>
             </motion.div>
 
-            <div className="phi-panel p-6 text-primary-foreground md:p-7">
-              <p className="phi-kicker mb-4 text-accent">Reach Us</p>
+            <div className="phi-panel p-6 text-white md:p-7">
+              <p className="phi-kicker mb-4 text-sky-200">Reach Us</p>
               <div className="grid gap-4">
                 <div>
                   <p className="font-display text-3xl">Showroom + Workshop</p>
-                  <p className="mt-1 text-sm text-primary-foreground/74">Two locations in Addis Ababa for consultation and production support.</p>
+                  <p className="mt-1 text-sm text-white/74">Two locations in Addis Ababa for consultation and production support.</p>
                 </div>
                 <div className="flex flex-wrap gap-3">
-                  <span className="soft-tag border-white/10 bg-white/10 text-primary-foreground">Free consultation</span>
-                  <span className="soft-tag border-white/10 bg-white/10 text-primary-foreground">Quick quotes</span>
+                  <span className="soft-tag border-white/10 bg-white/10 text-white">Free consultation</span>
+                  <span className="soft-tag border-white/10 bg-white/10 text-white">Quick quotes</span>
                 </div>
               </div>
             </div>
@@ -241,8 +241,8 @@ const ContactPage = () => {
 
                       <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-border bg-card/95 p-4 shadow-lg backdrop-blur-md">
                         <div className="flex items-start gap-3">
-                          <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-accent/20">
-                            <MapPin className="h-5 w-5 text-accent" />
+                          <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-primary/15">
+                            <MapPin className="h-5 w-5 text-primary" />
                           </div>
                           <div>
                             <h4 className="text-sm font-semibold text-foreground">{location.title}</h4>
@@ -251,7 +251,7 @@ const ContactPage = () => {
                               href={location.directionsHref}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="mt-2 inline-flex items-center gap-1 text-xs text-accent hover:underline"
+                              className="mt-2 inline-flex items-center gap-1 text-xs text-primary hover:underline"
                             >
                               Get Directions <ArrowRight className="h-3 w-3" />
                             </a>
@@ -313,7 +313,7 @@ const ContactPage = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-accent/10 to-primary/10 rounded-3xl blur-2xl opacity-50" />
                 <div className="premium-card relative p-8 md:p-10 shadow-xl">
                   <div className="mb-8">
-                    <span className="inline-flex items-center gap-2 text-accent font-medium text-sm tracking-wider uppercase mb-2">
+                    <span className="mb-2 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider text-primary">
                       <Send className="h-4 w-4" />
                       Send a Message
                     </span>
@@ -329,7 +329,7 @@ const ContactPage = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                       <div className="space-y-2">
                         <label htmlFor="name" className="block text-sm font-medium text-foreground">
-                          Full Name <span className="text-accent">*</span>
+                          Full Name <span className="text-primary">*</span>
                         </label>
                         <Input
                           id="name"
@@ -338,12 +338,12 @@ const ContactPage = () => {
                           onChange={handleChange}
                           placeholder="John Doe"
                           required
-                          className="bg-background/50 border-border/50 focus:border-accent transition-colors h-12"
+                          className="h-12 border-border/50 bg-background/50 transition-colors focus:border-primary"
                         />
                       </div>
                       <div className="space-y-2">
                         <label htmlFor="email" className="block text-sm font-medium text-foreground">
-                          Email Address <span className="text-accent">*</span>
+                          Email Address <span className="text-primary">*</span>
                         </label>
                         <Input
                           id="email"
@@ -353,7 +353,7 @@ const ContactPage = () => {
                           onChange={handleChange}
                           placeholder="john@example.com"
                           required
-                          className="bg-background/50 border-border/50 focus:border-accent transition-colors h-12"
+                          className="h-12 border-border/50 bg-background/50 transition-colors focus:border-primary"
                         />
                       </div>
                     </div>
@@ -369,12 +369,12 @@ const ContactPage = () => {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder="+251 966 494 949"
-                          className="bg-background/50 border-border/50 focus:border-accent transition-colors h-12"
+                          className="h-12 border-border/50 bg-background/50 transition-colors focus:border-primary"
                         />
                       </div>
                       <div className="space-y-2">
                         <label htmlFor="subject" className="block text-sm font-medium text-foreground">
-                          Subject <span className="text-accent">*</span>
+                          Subject <span className="text-primary">*</span>
                         </label>
                         <Input
                           id="subject"
@@ -383,14 +383,14 @@ const ContactPage = () => {
                           onChange={handleChange}
                           placeholder="Project Inquiry"
                           required
-                          className="bg-background/50 border-border/50 focus:border-accent transition-colors h-12"
+                          className="h-12 border-border/50 bg-background/50 transition-colors focus:border-primary"
                         />
                       </div>
                     </div>
                     
                     <div className="space-y-2">
                       <label htmlFor="message" className="block text-sm font-medium text-foreground">
-                        Message <span className="text-accent">*</span>
+                        Message <span className="text-primary">*</span>
                       </label>
                       <Textarea
                         id="message"
@@ -400,7 +400,7 @@ const ContactPage = () => {
                         placeholder="Tell us about your project requirements, dimensions, glass type preferences..."
                         rows={5}
                         required
-                        className="bg-background/50 border-border/50 focus:border-accent transition-colors resize-none"
+                        className="resize-none border-border/50 bg-background/50 transition-colors focus:border-primary"
                       />
                     </div>
                     

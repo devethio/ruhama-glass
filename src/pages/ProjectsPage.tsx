@@ -63,26 +63,26 @@ const ProjectsPage = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="page-hero-grid">
             <div className="max-w-3xl">
-              <span className="eyebrow-line text-accent">Our Portfolio</span>
-              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl">
+              <span className="eyebrow-line text-sky-200">Our Portfolio</span>
+              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-white md:text-5xl lg:text-6xl">
                 Signature work shaped for
-                <span className="block text-accent">commercial and residential spaces</span>
+                <span className="block text-sky-200">commercial and residential spaces</span>
               </h1>
-              <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/82 md:text-xl">
+              <p className="max-w-2xl text-lg leading-relaxed text-white/82 md:text-xl">
                 Explore selected Ruhama Glass projects across offices, hospitality venues, real estate developments, and bespoke interiors.
               </p>
             </div>
 
-            <div className="phi-panel p-6 text-primary-foreground md:p-7">
-              <p className="phi-kicker mb-4 text-accent">Project Types</p>
+            <div className="phi-panel p-6 text-white md:p-7">
+              <p className="phi-kicker mb-4 text-sky-200">Project Types</p>
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <p className="font-display text-3xl">Commercial</p>
-                  <p className="mt-1 text-sm text-primary-foreground/72">Offices, storefronts, shared spaces</p>
+                  <p className="mt-1 text-sm text-white/72">Offices, storefronts, shared spaces</p>
                 </div>
                 <div>
                   <p className="font-display text-3xl">Hospitality</p>
-                  <p className="mt-1 text-sm text-primary-foreground/72">Lodges, guest spaces, bathrooms</p>
+                  <p className="mt-1 text-sm text-white/72">Lodges, guest spaces, bathrooms</p>
                 </div>
               </div>
             </div>
@@ -119,8 +119,8 @@ const ProjectsPage = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-glass-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="w-12 h-12 rounded-full bg-primary-foreground/20 backdrop-blur-sm flex items-center justify-center">
-                        <ExternalLink className="h-5 w-5 text-primary-foreground" />
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                        <ExternalLink className="h-5 w-5 text-white" />
                       </div>
                     </div>
                   </div>

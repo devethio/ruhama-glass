@@ -61,18 +61,18 @@ export const ProjectGallery = () => {
                 
                 {/* Content */}
                 <div className="absolute inset-0 flex flex-col justify-end p-4 md:p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-xs uppercase tracking-wider text-primary-foreground/70 mb-1">
+                  <span className="mb-1 text-xs uppercase tracking-wider text-white/70">
                     {image.category}
                   </span>
-                  <h3 className="font-display text-sm md:text-lg font-semibold text-primary-foreground">
+                  <h3 className="font-display text-sm font-semibold text-white md:text-lg">
                     {image.title}
                   </h3>
                 </div>
 
                 {/* Zoom Icon */}
                 <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-10 h-10 rounded-full bg-primary-foreground/20 backdrop-blur-sm flex items-center justify-center">
-                    <Maximize2 className="h-4 w-4 text-primary-foreground" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+                    <Maximize2 className="h-4 w-4 text-white" />
                   </div>
                 </div>
               </motion.div>
