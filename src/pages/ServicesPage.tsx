@@ -102,6 +102,8 @@ const accessories = [
   { icon: Box, name: "Door Handles", description: "Modern and classic designs" },
 ];
 
+const serviceHighlights = ["Custom fabrication", "Site measurement", "Professional installation"];
+
 const ServicesPage = () => {
   return (
     <main className="min-h-screen">
@@ -121,32 +123,58 @@ const ServicesPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="page-top-offset pb-16 gradient-dark">
+      <section className="page-top-offset page-hero pb-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="text-accent font-medium text-sm tracking-wider uppercase">
-              Our Services
-            </span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mt-3 mb-6">
-              Products & Services
-            </h1>
-            <p className="text-primary-foreground/80 text-lg md:text-xl leading-relaxed">
-              At Ruhama Glass, we offer a wide range of high-quality glass solutions designed to meet the needs of both residential and commercial clients.
-            </p>
+          <div className="page-hero-grid">
+            <div className="max-w-3xl">
+              <span className="eyebrow-line text-accent">Our Services</span>
+              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl">
+                Premium glass services for
+                <span className="block text-accent">homes, workplaces, and projects</span>
+              </h1>
+              <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/82 md:text-xl">
+                From fabrication and edging to partitions, mirrors, shower enclosures, and architectural glazing, Ruhama Glass provides end-to-end solutions with precise installation.
+              </p>
+            </div>
+
+            <div className="phi-panel p-6 text-primary-foreground md:p-7">
+              <p className="phi-kicker mb-4 text-accent">Service Focus</p>
+              <div className="flex flex-wrap gap-3">
+                {serviceHighlights.map((item) => (
+                  <span key={item} className="soft-tag border-white/10 bg-white/8 text-primary-foreground">
+                    {item}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-6 h-px w-full bg-white/12" />
+              <p className="mt-5 text-sm leading-relaxed text-primary-foreground/78">
+                Built for residential renovations, retail interiors, hospitality spaces, and commercial developments.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-24 bg-background">
+      <section className="section-glow py-24 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
+          <div className="section-intro mb-14">
+            <span className="eyebrow-line text-primary">What We Offer</span>
+            <h2 className="mt-5 mb-4 font-display text-3xl font-bold text-foreground md:text-4xl">
+              Specialist fabrication with a cleaner project workflow
+            </h2>
+            <p>
+              Every service line is backed by measurement, finishing, and installation support, so the work feels coordinated from first visit to final fit.
+            </p>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {services.map((service, index) => (
+            {services.map((service) => (
               <div
                 key={service.title}
-                className="p-8 rounded-2xl bg-card border border-border hover:shadow-glass transition-all duration-300"
+                className="premium-card p-8 hover:shadow-glass transition-all duration-300"
               >
-                <div className="flex items-start gap-4 mb-6">
+                <div className="flex items-start justify-between gap-4 mb-6">
+                  <div className="flex items-start gap-4">
                   <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center flex-shrink-0">
                     <service.icon className="h-7 w-7 text-primary-foreground" />
                   </div>
@@ -158,6 +186,8 @@ const ServicesPage = () => {
                       {service.description}
                     </p>
                   </div>
+                  </div>
+                  <span className="soft-tag shrink-0">{service.features.length} features</span>
                 </div>
                 <ul className="space-y-3">
                   {service.features.map((feature) => (
@@ -176,11 +206,9 @@ const ServicesPage = () => {
       {/* Accessories Section */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-primary font-medium text-sm tracking-wider uppercase">
-              Accessories
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-4">
+          <div className="text-center mb-16 section-intro mx-auto">
+            <span className="eyebrow-line text-primary justify-center">Accessories</span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-5 mb-4">
               Glass Accessories & Fittings
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
@@ -191,7 +219,7 @@ const ServicesPage = () => {
             {accessories.map((item) => (
               <div
                 key={item.name}
-                className="p-6 rounded-2xl bg-card border border-border text-center hover-lift transition-all duration-300"
+                className="premium-card p-6 text-center hover-lift transition-all duration-300"
               >
                 <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mx-auto mb-4">
                   <item.icon className="h-6 w-6 text-primary" />

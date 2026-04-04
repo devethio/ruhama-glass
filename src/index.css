@@ -250,6 +250,80 @@
     padding-top: clamp(6rem, 8vw, 6.9rem);
   }
 
+  .page-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(circle at top left, hsl(var(--primary) / 0.24), transparent 22%),
+      radial-gradient(circle at bottom right, hsl(var(--accent) / 0.2), transparent 28%),
+      linear-gradient(135deg, hsl(var(--glass-dark)) 0%, hsl(var(--glass-primary)) 56%, hsl(205 86% 28%) 100%);
+  }
+
+  .page-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+    gap: clamp(1.5rem, 4vw, 4rem);
+    align-items: end;
+  }
+
+  .premium-card {
+    border-radius: calc(var(--phi-space-4) * 0.85);
+    border: 1px solid hsl(var(--border) / 0.6);
+    background:
+      linear-gradient(180deg, hsl(var(--card) / 0.98), hsl(var(--card) / 0.82));
+    box-shadow:
+      0 14px 38px hsl(205 52% 16% / 0.07),
+      inset 0 1px 0 hsl(0 0% 100% / 0.35);
+  }
+
+  .section-intro {
+    max-width: 42rem;
+  }
+
+  .section-intro p {
+    color: hsl(var(--muted-foreground));
+    line-height: 1.75;
+  }
+
+  .eyebrow-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    font-weight: 700;
+  }
+
+  .eyebrow-line::before {
+    content: '';
+    width: 2.6rem;
+    height: 2px;
+    border-radius: 9999px;
+    background: hsl(var(--accent));
+  }
+
+  .soft-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 0.9rem;
+    border-radius: 9999px;
+    border: 1px solid hsl(var(--primary) / 0.14);
+    background: hsl(var(--primary) / 0.06);
+    color: hsl(var(--foreground));
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
   .section-glow {
     position: relative;
     isolation: isolate;
@@ -317,6 +391,11 @@
   @media (max-width: 1024px) {
     .split-layout {
       grid-template-columns: 1fr;
+    }
+
+    .page-hero-grid {
+      grid-template-columns: 1fr;
+      align-items: start;
     }
 
     .phi-shell::before {

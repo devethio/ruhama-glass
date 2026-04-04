@@ -123,29 +123,41 @@ const ContactPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="relative page-top-offset pb-20 overflow-hidden">
-        <div className="absolute inset-0 gradient-dark" />
+      <section className="relative page-top-offset page-hero pb-20 overflow-hidden">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAyNHYySDI0di0yaDEyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-50" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <span className="inline-flex items-center gap-2 text-accent font-medium text-sm tracking-wider uppercase mb-4">
-              <span className="w-8 h-[2px] bg-accent" />
-              Contact Us
-            </span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mt-3 mb-6">
-              Let's Create Something
-              <span className="block text-accent">Beautiful Together</span>
-            </h1>
-            <p className="text-primary-foreground/80 text-lg md:text-xl leading-relaxed max-w-2xl">
-              Have a project in mind? Contact us today for a free consultation and let's discuss how we can bring your vision to life with premium glass solutions.
-            </p>
-          </motion.div>
+          <div className="page-hero-grid">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-3xl"
+            >
+              <span className="eyebrow-line text-accent">Contact Us</span>
+              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl">
+                Let’s plan your next
+                <span className="block text-accent">glass project with clarity</span>
+              </h1>
+              <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/82 md:text-xl">
+                Visit the showroom, find the workshop, or send your project details directly to our team for a consultation and quote.
+              </p>
+            </motion.div>
+
+            <div className="phi-panel p-6 text-primary-foreground md:p-7">
+              <p className="phi-kicker mb-4 text-accent">Reach Us</p>
+              <div className="grid gap-4">
+                <div>
+                  <p className="font-display text-3xl">Showroom + Workshop</p>
+                  <p className="mt-1 text-sm text-primary-foreground/74">Two locations in Addis Ababa for consultation and production support.</p>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  <span className="soft-tag border-white/10 bg-white/10 text-primary-foreground">Free consultation</span>
+                  <span className="soft-tag border-white/10 bg-white/10 text-primary-foreground">Quick quotes</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Decorative elements */}
@@ -166,7 +178,7 @@ const ContactPage = () => {
               <motion.div
                 key={item.title}
                 variants={itemVariants}
-                className="group relative p-6 rounded-2xl bg-card border border-border hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10"
+                className="group premium-card relative p-6 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:shadow-accent/10"
               >
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <item.icon className="h-6 w-6 text-white" />
@@ -199,11 +211,20 @@ const ContactPage = () => {
               transition={{ duration: 0.6 }}
               className="order-2 lg:order-1"
             >
+              <div className="section-intro mb-8">
+                <span className="eyebrow-line text-primary">Visit Our Locations</span>
+                <h2 className="mt-5 mb-4 font-display text-3xl font-bold text-foreground md:text-4xl">
+                  Showroom and workshop, clearly separated
+                </h2>
+                <p>
+                  Use the maps below to plan a visit, get directions, or decide whether you need to stop by the showroom or the workshop.
+                </p>
+              </div>
               <div className="grid gap-6 md:grid-cols-2">
                 {locations.map((location) => (
                   <div key={location.id} className="relative">
                     <div className="absolute -inset-4 rounded-3xl bg-gradient-to-r from-accent/20 via-primary/10 to-accent/20 blur-xl opacity-50" />
-                    <div className="relative overflow-hidden rounded-2xl border border-border shadow-2xl">
+                    <div className="premium-card relative overflow-hidden rounded-2xl shadow-2xl">
                       <div className="aspect-[4/5] w-full">
                         <iframe
                           src={location.embedSrc}
@@ -279,9 +300,18 @@ const ContactPage = () => {
               transition={{ duration: 0.6 }}
               className="order-1 lg:order-2"
             >
+              <div className="section-intro mb-8">
+                <span className="eyebrow-line text-primary">Send a Request</span>
+                <h2 className="mt-5 mb-4 font-display text-3xl font-bold text-foreground md:text-4xl">
+                  Tell us what you need
+                </h2>
+                <p>
+                  Share the scope, dimensions, and type of glass work you need. Our team will follow up with the right next step.
+                </p>
+              </div>
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-accent/10 to-primary/10 rounded-3xl blur-2xl opacity-50" />
-                <div className="relative p-8 md:p-10 rounded-2xl bg-card border border-border shadow-xl">
+                <div className="premium-card relative p-8 md:p-10 shadow-xl">
                   <div className="mb-8">
                     <span className="inline-flex items-center gap-2 text-accent font-medium text-sm tracking-wider uppercase mb-2">
                       <Send className="h-4 w-4" />

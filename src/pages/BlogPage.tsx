@@ -180,30 +180,39 @@ const BlogPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="page-top-offset pb-16 relative overflow-hidden">
+      <section className="page-top-offset pb-20 page-hero relative overflow-hidden">
         <div className="absolute inset-0 -z-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
         </div>
 
         <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto"
-          >
-            <span className="inline-block px-4 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-6">
-              Our Blog
-            </span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-              Insights & <span className="text-primary">Inspiration</span>
-            </h1>
-            <p className="text-lg text-muted-foreground">
-              Discover the latest trends in glass architecture, design tips, and behind-the-scenes 
-              looks at our projects.
-            </p>
-          </motion.div>
+          <div className="page-hero-grid">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-3xl"
+            >
+              <span className="eyebrow-line text-accent">Our Blog</span>
+              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl">
+                Insight, project notes,
+                <span className="block text-accent">and practical glass guidance</span>
+              </h1>
+              <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/82">
+                Discover design insight, installation thinking, and behind-the-scenes looks at the spaces and glass systems we create.
+              </p>
+            </motion.div>
+
+            <div className="phi-panel p-6 text-primary-foreground md:p-7">
+              <p className="phi-kicker mb-4 text-accent">What You’ll Find</p>
+              <div className="flex flex-wrap gap-3">
+                <span className="soft-tag border-white/10 bg-white/10 text-primary-foreground">Project notes</span>
+                <span className="soft-tag border-white/10 bg-white/10 text-primary-foreground">Design insight</span>
+                <span className="soft-tag border-white/10 bg-white/10 text-primary-foreground">Material guidance</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -215,11 +224,9 @@ const BlogPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-12"
+            className="text-center section-intro max-w-3xl mx-auto mb-12"
           >
-            <span className="inline-block px-4 py-1 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
-              Studio Highlights
-            </span>
+            <span className="eyebrow-line text-primary justify-center">Studio Highlights</span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-4">
               Behind the Glass
             </h2>
@@ -240,7 +247,7 @@ const BlogPage = () => {
               <motion.article
                 key={highlight.title}
                 variants={itemVariants}
-                className="bg-card border border-border/50 rounded-2xl overflow-hidden group hover:shadow-glass transition-all duration-300"
+                className="premium-card overflow-hidden group hover:shadow-glass transition-all duration-300"
               >
                 <div className="aspect-[4/3] bg-muted overflow-hidden relative">
                   <img
@@ -275,12 +282,10 @@ const BlogPage = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center max-w-3xl mx-auto mb-12"
+            className="text-center section-intro max-w-3xl mx-auto mb-12"
           >
-            <span className="text-primary font-medium text-sm tracking-wider uppercase">
-              Studio Journal
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-3 mb-4">
+            <span className="eyebrow-line text-primary justify-center">Studio Journal</span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-5 mb-4">
               Latest Articles & Project Notes
             </h2>
             <p className="text-muted-foreground text-lg">
@@ -292,7 +297,7 @@ const BlogPage = () => {
           {loading ? (
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div key={i} className="bg-card border border-border/50 rounded-2xl overflow-hidden animate-pulse">
+                <div key={i} className="premium-card overflow-hidden animate-pulse">
                   <div className="aspect-[16/10] bg-muted" />
                   <div className="p-6 space-y-3">
                     <div className="h-4 bg-muted rounded w-1/3" />
@@ -314,7 +319,7 @@ const BlogPage = () => {
                 <motion.article
                   key={post.id}
                   variants={itemVariants}
-                  className="bg-card border border-border/50 rounded-2xl overflow-hidden group hover:shadow-glass transition-all duration-300"
+                  className="premium-card overflow-hidden group hover:shadow-glass transition-all duration-300"
                 >
                   <div className="aspect-[16/10] bg-muted overflow-hidden relative">
                     {post.cover_image ? (

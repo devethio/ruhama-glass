@@ -59,25 +59,49 @@ const ProjectsPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="page-top-offset pb-16 gradient-dark">
+      <section className="page-top-offset page-hero pb-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="text-accent font-medium text-sm tracking-wider uppercase">
-              Our Portfolio
-            </span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mt-3 mb-6">
-              Major Projects
-            </h1>
-            <p className="text-primary-foreground/80 text-lg md:text-xl leading-relaxed">
-              Explore our portfolio of completed projects showcasing our expertise in delivering premium glass solutions across various industries.
-            </p>
+          <div className="page-hero-grid">
+            <div className="max-w-3xl">
+              <span className="eyebrow-line text-accent">Our Portfolio</span>
+              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl">
+                Signature work shaped for
+                <span className="block text-accent">commercial and residential spaces</span>
+              </h1>
+              <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/82 md:text-xl">
+                Explore selected Ruhama Glass projects across offices, hospitality venues, real estate developments, and bespoke interiors.
+              </p>
+            </div>
+
+            <div className="phi-panel p-6 text-primary-foreground md:p-7">
+              <p className="phi-kicker mb-4 text-accent">Project Types</p>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <p className="font-display text-3xl">Commercial</p>
+                  <p className="mt-1 text-sm text-primary-foreground/72">Offices, storefronts, shared spaces</p>
+                </div>
+                <div>
+                  <p className="font-display text-3xl">Hospitality</p>
+                  <p className="mt-1 text-sm text-primary-foreground/72">Lodges, guest spaces, bathrooms</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Projects Grid */}
-      <section className="py-24 bg-background">
+      <section className="section-glow py-24 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
+          <div className="section-intro mb-14">
+            <span className="eyebrow-line text-primary">Selected Projects</span>
+            <h2 className="mt-5 mb-4 font-display text-3xl font-bold text-foreground md:text-4xl">
+              Finished with precision, installed to feel effortless
+            </h2>
+            <p>
+              We focus on clarity of detail, strong fit, and elegant integration so the final result supports the architecture instead of competing with it.
+            </p>
+          </div>
           <div className="space-y-16">
             {projects.map((project, index) => (
               <div
@@ -87,11 +111,11 @@ const ProjectsPage = () => {
                 }`}
               >
                 <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                  <div className="relative group overflow-hidden rounded-2xl">
+                  <div className="relative group overflow-hidden rounded-[2rem] premium-card p-2">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full aspect-[4/3] rounded-[1.5rem] object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-glass-dark/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -101,7 +125,7 @@ const ProjectsPage = () => {
                     </div>
                   </div>
                 </div>
-                <div className={index % 2 === 1 ? "lg:order-1" : ""}>
+                <div className={`${index % 2 === 1 ? "lg:order-1" : ""} premium-card p-8 md:p-10`}>
                   <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
                     {project.category}
                   </span>
@@ -115,7 +139,7 @@ const ProjectsPage = () => {
                     {project.services.map((service) => (
                       <span
                         key={service}
-                        className="px-4 py-2 rounded-full bg-secondary text-secondary-foreground text-sm"
+                        className="soft-tag bg-secondary/90 border-secondary/30 text-secondary-foreground"
                       >
                         {service}
                       </span>

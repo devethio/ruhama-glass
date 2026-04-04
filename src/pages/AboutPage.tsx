@@ -52,18 +52,37 @@ const AboutPage = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="page-top-offset pb-16 gradient-dark">
+      <section className="page-top-offset page-hero pb-20">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="text-accent font-medium text-sm tracking-wider uppercase">
-              About Us
-            </span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mt-3 mb-6">
-              Who We Are
-            </h1>
-            <p className="text-primary-foreground/80 text-lg md:text-xl leading-relaxed">
-              At Ruhama Glass, we believe that every space has the potential to inspire. With over 17 years of experience, we have established ourselves as a leading provider of premium glass solutions.
-            </p>
+          <div className="page-hero-grid">
+            <div className="max-w-3xl">
+              <span className="eyebrow-line text-accent">About Us</span>
+              <h1 className="mt-5 mb-6 font-display text-4xl font-bold text-primary-foreground md:text-5xl lg:text-6xl">
+                Crafted with precision,
+                <span className="block text-accent">built for lasting spaces</span>
+              </h1>
+              <p className="max-w-2xl text-lg leading-relaxed text-primary-foreground/82 md:text-xl">
+                Ruhama Glass brings more than 17 years of experience to custom mirrors, architectural glazing, partitions, and installation work for residential and commercial clients across Ethiopia.
+              </p>
+            </div>
+
+            <div className="phi-panel p-6 text-primary-foreground md:p-7">
+              <p className="phi-kicker mb-4 text-accent">At a Glance</p>
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <p className="font-display text-4xl">17+</p>
+                  <p className="mt-1 text-sm text-primary-foreground/72">Years of experience</p>
+                </div>
+                <div>
+                  <p className="font-display text-4xl">500+</p>
+                  <p className="mt-1 text-sm text-primary-foreground/72">Projects delivered</p>
+                </div>
+              </div>
+              <div className="mt-6 h-px w-full bg-white/12" />
+              <p className="mt-5 text-sm leading-relaxed text-primary-foreground/78">
+                We work closely with homeowners, architects, contractors, and interior designers from concept through installation.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -72,22 +91,23 @@ const AboutPage = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
-            <div>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <div className="section-intro">
+              <span className="eyebrow-line text-primary">Our Story</span>
+              <h2 className="mt-5 mb-6 font-display text-3xl font-bold text-foreground md:text-4xl">
                 Crafting Excellence Since 2007
               </h2>
-              <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
+              <p className="text-lg mb-6">
                 We specialize in crafting mirrors of various sizes, offering modern and elegant designs that enhance both residential and commercial spaces. Our mirrors are tailored to complement any décor, adding a touch of sophistication and style to interiors.
               </p>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
+              <p className="mb-6">
                 We pride ourselves on delivering personalized service, working closely with homeowners, architects, designers, and builders to bring their visions to life. From design to installation, we offer a comprehensive range of services, ensuring a seamless and stress-free experience for our clients.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p>
                 Every project—no matter the size—is handled with the utmost care and professionalism.
               </p>
             </div>
             <div className="space-y-6">
-              <div className="p-8 rounded-2xl bg-muted/50 border border-border">
+              <div className="premium-card p-8">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center">
                     <Target className="h-6 w-6 text-primary-foreground" />
@@ -98,7 +118,7 @@ const AboutPage = () => {
                   To provide innovative, custom glass solutions that bring beauty and functionality to every space, through high-quality craftsmanship, tailored design, and exceptional customer service.
                 </p>
               </div>
-              <div className="p-8 rounded-2xl bg-muted/50 border border-border">
+              <div className="premium-card p-8">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 rounded-xl gradient-primary flex items-center justify-center">
                     <Eye className="h-6 w-6 text-primary-foreground" />
@@ -115,13 +135,11 @@ const AboutPage = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-24 bg-muted/30">
+      <section className="section-glow py-24 bg-muted/30">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <span className="text-primary font-medium text-sm tracking-wider uppercase">
-              Our Core Values
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-4">
+          <div className="text-center mb-16 section-intro mx-auto">
+            <span className="eyebrow-line text-primary justify-center">Our Core Values</span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-5 mb-4">
               What Drives Us
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
@@ -132,7 +150,7 @@ const AboutPage = () => {
             {values.map((value) => (
               <div
                 key={value.title}
-                className="p-6 rounded-2xl bg-card border border-border hover:shadow-glass transition-all duration-300 hover-lift text-center"
+                className="premium-card p-6 hover:shadow-glass transition-all duration-300 hover-lift text-center"
               >
                 <div className="w-14 h-14 rounded-xl gradient-primary flex items-center justify-center mx-auto mb-4">
                   <value.icon className="h-7 w-7 text-primary-foreground" />
@@ -153,14 +171,12 @@ const AboutPage = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <span className="text-primary font-medium text-sm tracking-wider uppercase">
-                Why Choose Us
-              </span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-3 mb-6">
+            <div className="section-intro">
+              <span className="eyebrow-line text-primary">Why Choose Us</span>
+              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-5 mb-6">
                 The Ruhama Difference
               </h2>
-              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
+              <p className="text-lg mb-8">
                 At Ruhama Glass, we don't just sell glass—we create solutions that inspire and enhance the spaces where people live and work.
               </p>
               <div className="space-y-4">
@@ -173,11 +189,15 @@ const AboutPage = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="p-8 rounded-2xl bg-muted/50 border border-border">
+              <div className="premium-card p-8 md:p-10">
                 <blockquote className="font-display text-2xl md:text-3xl font-medium text-foreground italic mb-6">
                   "Shaping spaces with innovation and craftsmanship."
                 </blockquote>
-                <p className="text-primary font-semibold">— Our Motto</p>
+                <div className="flex flex-wrap gap-3">
+                  <span className="soft-tag">Custom fabrication</span>
+                  <span className="soft-tag">Reliable installation</span>
+                  <span className="soft-tag">Refined finish</span>
+                </div>
               </div>
             </div>
           </div>
