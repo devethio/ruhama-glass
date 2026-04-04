@@ -45,13 +45,15 @@ export const Navbar = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
-            <img
-              src="/logo.jpg"
-              alt="Ruhama Glass logo"
-              className="h-12 w-12 rounded-full object-cover border border-border/50 shadow-soft"
-            />
+            <div className="rounded-full bg-white/92 p-1.5 shadow-soft ring-1 ring-primary/15 backdrop-blur-sm">
+              <img
+                src="/logo.jpg"
+                alt="Ruhama Glass logo"
+                className="h-14 w-14 rounded-full object-cover"
+              />
+            </div>
             <div className="leading-tight">
-              <span className="font-display text-[1.2rem] font-semibold tracking-[-0.04em] text-foreground block">
+              <span className="font-display text-[1.35rem] font-semibold tracking-[-0.04em] text-foreground block">
                 Ruhama
               </span>
               <span className="text-[0.68rem] font-semibold uppercase tracking-[0.34em] text-primary/90 block mt-0.5">

@@ -27,15 +27,17 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-3 mb-6">
-              <img
-                src="/logo.jpg"
-                alt="Ruhama Glass logo"
-                className="h-12 w-12 rounded-full object-cover border border-primary-foreground/30"
-              />
+            <div className="flex items-center gap-4 mb-6">
+              <div className="rounded-full bg-white/95 p-1.5 shadow-soft ring-1 ring-white/20">
+                <img
+                  src="/logo.jpg"
+                  alt="Ruhama Glass logo"
+                  className="h-16 w-16 rounded-full object-cover"
+                />
+              </div>
               <div className="leading-tight">
-                <span className="font-display text-2xl font-bold block">Ruhama</span>
-                <span className="font-display text-lg text-primary-foreground/70 block -mt-1">Glass</span>
+                <span className="font-display text-[1.9rem] font-bold block">Ruhama</span>
+                <span className="text-[0.72rem] font-semibold uppercase tracking-[0.34em] text-primary-foreground/75 block mt-1">Glass</span>
               </div>
             </div>
             <p className="text-primary-foreground/70 text-sm leading-relaxed mb-6">

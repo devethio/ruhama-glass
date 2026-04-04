@@ -5,7 +5,7 @@ const SITE_NAME = "Ruhama Glass";
 const SITE_URL = "https://www.ruhamaglass.com";
 const DEFAULT_DESCRIPTION =
   "Ruhama Glass delivers premium glass solutions in Addis Ababa and across Ethiopia, including custom mirrors, partitions, shower enclosures, and architectural glass.";
-const DEFAULT_IMAGE = `${SITE_URL}/photos/hero-showroom.jpg`;
+const DEFAULT_IMAGE = `${SITE_URL}/logo.jpg`;
 
 type JsonLd = Record<string, unknown>;
 
