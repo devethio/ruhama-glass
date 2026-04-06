@@ -20,6 +20,8 @@ export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const { user, signOut } = useAuth();
+  const isHomePage = location.pathname === "/";
+  const useSolidNavbar = scrolled || !isHomePage;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,9 +40,9 @@ export const Navbar = () => {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        scrolled
-          ? "bg-background/98 backdrop-blur-md border-b border-border/40 py-3"
-          : "bg-background/70 backdrop-blur-sm py-4"
+        useSolidNavbar
+          ? "border-b border-border bg-background py-3 shadow-lg"
+          : "bg-background/88 py-4 backdrop-blur-md"
       )}
     >
       <div className="container mx-auto px-4 lg:px-8">
