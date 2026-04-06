@@ -23,7 +23,7 @@ export const CTA = () => {
           alt=""
           className="w-full h-[130%] object-cover"
         />
-        <div className="absolute inset-0 bg-glass-dark/80" />
+        <div className="absolute inset-0 bg-glass-dark/88" />
       </motion.div>
 
       {/* Animated glass reflections */}
@@ -48,7 +48,7 @@ export const CTA = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7 }}
-          className="phi-panel max-w-4xl mx-auto px-6 py-12 md:px-10 md:py-14 text-center"
+          className="mx-auto max-w-4xl rounded-[2rem] border border-white/14 bg-[linear-gradient(145deg,hsl(210_52%_12%_/_0.9),hsl(205_86%_16%_/_0.72))] px-6 py-12 text-center shadow-[0_24px_80px_hsla(210,55%,8%,0.42)] backdrop-blur-xl md:px-10 md:py-14"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.9 }}
@@ -62,7 +62,7 @@ export const CTA = () => {
           <h2 className="mb-6 font-display text-3xl font-bold text-white md:text-4xl lg:text-5xl">
             Let's Create Something Beautiful Together
           </h2>
-          <p className="mb-10 text-lg leading-relaxed text-white/80 md:text-xl">
+          <p className="mb-10 text-lg leading-relaxed text-white/90 md:text-xl">
             Contact us today for a free consultation and discover how our premium glass solutions can elevate your project to new heights.
           </p>
           <motion.div

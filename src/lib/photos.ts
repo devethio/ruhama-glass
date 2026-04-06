@@ -1,9 +1,9 @@
 export const photoLibrary = {
   hero: "/photos/hero-showroom.jpg",
-  sheger: "/photos/project-office.jpg",
-  temer: "/photos/project-partition.jpg",
-  chebera: "/photos/project-exterior.jpg",
-  maraki: "/photos/project-entrance.jpg",
+  sheger: "/photos/project-sheger-official.jpg",
+  temer: "/photos/project-temer-official.jpg",
+  chebera: "/photos/project-chebera-official.jpg",
+  maraki: "/photos/project-maraki-official.jpg",
   lobby: "/photos/gallery-lobby.jpg",
   mirror: "/photos/gallery-mirror.jpg",
   facade: "/photos/gallery-facade.jpg",
